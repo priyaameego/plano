@@ -51,7 +51,7 @@ export default function WhoWeAre() {
               {/* Doctor 1 */}
               <div className="relative z-10 w-3/4 rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
                 <img 
-                  src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=2070&auto=format&fit=crop" 
+                  src="https://dentalplaceofplano.com/wp-content/uploads/2021/02/Dan-600x899.png" 
                   alt="Doctor Daniel Juma" 
                   className="w-full h-[350px] object-cover object-top"
                 />
@@ -64,7 +64,7 @@ export default function WhoWeAre() {
               {/* Doctor 2 */}
               <div className="absolute top-32 right-0 w-2/3 rounded-2xl overflow-hidden shadow-2xl border-4 border-white z-20 translate-x-4 md:translate-x-10">
                 <img 
-                  src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=2064&auto=format&fit=crop" 
+                  src="https://dentalplaceofplano.com/wp-content/uploads/2024/11/2-600x900.jpg" 
                   alt="Doctor Lobo" 
                   className="w-full h-[300px] object-cover object-top"
                 />

@@ -19,7 +19,7 @@ export default function Footer() {
             <div className="space-y-4 mb-6">
               <p className="flex items-start gap-2">
                 <span className="text-[#dfb15b] font-bold">Address:</span>
-                <span>2220 Coit Rd #570, Plano, TX 75075</span>
+                <span>220 Coit Rd #570, Plano, TX 75075</span>
               </p>
               <p className="flex items-center gap-2">
                 <span className="text-[#dfb15b] font-bold">Phone:</span>

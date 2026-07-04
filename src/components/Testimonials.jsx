@@ -36,7 +36,7 @@ export default function Testimonials() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-softblue-400 font-semibold uppercase tracking-wider mb-2 block text-sm">Testimonials</span>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Stories of <span className="text-transparent bg-clip-text bg-gradient-to-r from-softblue-300 to-white">Transformed Smiles</span>
+            Hear From <span className="text-transparent bg-clip-text bg-gradient-to-r from-softblue-300 to-white">Our Patients</span>
           </h2>
         </div>
 

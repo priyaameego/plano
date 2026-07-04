@@ -14,7 +14,7 @@ const serviceData = {
     title: 'Invisalign',
     heading: 'Invisalign Clear Aligners',
     description: 'Invisalign is the clear alternative to braces. Dr. Jumas is a certified Invisalign provider who designs customized treatment plans to give you a straighter, healthier smile.',
-    image: 'https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?q=80&w=2070&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2070&auto=format&fit=crop',
     benefits: ['Smooth & comfortable aligners', 'Virtually invisible', 'Fewer office visits', 'Better oral hygiene', 'Customized treatment plan']
   },
   'navigated-surgery': {

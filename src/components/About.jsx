@@ -17,13 +17,13 @@ export default function About() {
           >
             <div className="relative rounded-3xl overflow-hidden image-zoom-container shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2068&auto=format&fit=crop" 
-                alt="Lead Dentist" 
-                className="w-full h-auto object-cover"
+                src="/dr-lobo.png" 
+                alt="Dr. Stephanie Lobo" 
+                className="w-full h-auto object-cover bg-white"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-900/80 to-transparent flex flex-col justify-end p-8">
-                <h3 className="text-2xl font-bold text-white mb-1">Dr. Sarah Jenkins</h3>
-                <p className="text-softblue-200">Lead Cosmetic Dentist, DDS, FAGD</p>
+                <h3 className="text-2xl font-bold text-white mb-1">Dr. Stephanie Lobo</h3>
+                <p className="text-softblue-200">Dental Surgeon</p>
               </div>
             </div>
             

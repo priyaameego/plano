@@ -25,7 +25,7 @@ const doctors = [
   {
     name: 'Dr. Stephanie Lobo',
     title: 'Associate Dentist',
-    image: 'https://dentalplaceofplano.com/wp-content/uploads/2024/11/1.jpg',
+    image: 'https://dentalplaceofplano.com/wp-content/uploads/2024/11/2-600x900.jpg',
     reverse: true,
     credentials: [
       'American Dental Association',

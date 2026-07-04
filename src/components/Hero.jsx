@@ -53,14 +53,20 @@ export default function Hero() {
                 <span>World-Class Premium Dental Care</span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl font-light text-white leading-tight mb-6 font-sans">
-                Experience <span className="font-bold text-[#dfb15b]">Luxury</span> <br/>
-                Dental Wellness
-              </h1>
-              
-              <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-xl font-light leading-relaxed">
-                We combine advanced technology, expert professionals, and a spa-like atmosphere to provide you with an unparalleled dental experience. Your perfect smile starts here.
-              </p>
+              <motion.div 
+                initial={{ scale: 0.8, opacity: 0 }} 
+                animate={{ scale: 1, opacity: 1 }} 
+                transition={{ duration: 1.2, type: 'spring', bounce: 0.4 }} 
+                className="flex flex-col items-start gap-4 mb-10"
+              >
+                <img src="/logo.png" alt="Dental Place of Plano Logo" className="h-16 md:h-20 w-auto object-contain" />
+                <h1 className="text-5xl md:text-7xl font-light text-white leading-tight font-sans uppercase tracking-wide">
+                  Dental Place <span className="font-bold text-[#dfb15b]">Of Plano</span>
+                </h1>
+                <h3 className="text-2xl md:text-3xl text-gray-200 font-light tracking-wide border-l-4 border-[#dfb15b] pl-4 mt-2">
+                  Dr. Daniel Juma & Dr. Lobo
+                </h3>
+              </motion.div>
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="/book-now" className="bg-[#dfb15b] text-black hover:bg-white font-bold flex items-center justify-center gap-2 text-lg px-8 py-4 rounded-sm transition-all duration-300">

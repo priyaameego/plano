@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Menu, X, Phone, MapPin, Clock } from 'lucide-react';
+import { Menu, X, Phone, MapPin, Clock, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
@@ -19,8 +19,7 @@ const navLinks = [
     ]
   },
   { name: 'Testimonial', href: '/testimonials' },
-  { 
-    name: 'Patient Resources', 
+  { name: 'Patient Resources', 
     dropdown: [
       { name: 'New Patient', href: '/new-patient' },
       { name: 'Patient Education', href: '/patient-education' },
@@ -28,11 +27,13 @@ const navLinks = [
     ]
   },
   { name: 'Contact Us', href: '/contact' },
+  { name: 'Book Now', href: '/book-now' },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,7 +51,7 @@ export default function Navbar() {
           <div className="flex flex-wrap justify-center sm:justify-start items-center gap-4 sm:gap-6">
             <span className="flex items-center gap-1.5">
               <MapPin className="w-4 h-4" />
-              2220 Coit Rd #570, Plano, TX 75075
+              220 Coit Rd #570, Plano, TX 75075
             </span>
             <span className="hidden md:flex items-center gap-1.5">
               <Clock className="w-4 h-4" />
@@ -78,15 +79,19 @@ export default function Navbar() {
           scrolled ? 'bg-[#000000] shadow-lg shadow-black/50 py-1' : 'bg-[#0a0a0a] py-2'
         }`}
       >
-        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
-          <div className="flex justify-between items-center">
-            {/* Logo */}
-            <NavLink to="/" className="flex items-center group">
-              <img src="/logo.png" alt="Dental Place of Plano" className="h-10 sm:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
-            </NavLink>
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative">
+          <div className="flex justify-between items-center w-full">
+            
+            {/* Left: Logo */}
+            <div className="flex-1 flex justify-start z-10">
+              <NavLink to="/" className="flex items-center group">
+                <img src="/logo.png" alt="Dental Place of Plano" className="h-14 sm:h-16 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
+              </NavLink>
+            </div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-2 lg:space-x-8">
+            {/* Center: Desktop Navigation */}
+            <div className="hidden md:flex absolute inset-0 items-center justify-center pointer-events-none z-10">
+              <div className="flex items-center space-x-2 lg:space-x-8 pointer-events-auto">
               {navLinks.map((link) => (
                 <div key={link.name} className="relative group py-4">
                   {link.dropdown ? (
@@ -142,15 +147,19 @@ export default function Navbar() {
                   )}
                 </div>
               ))}
+              </div>
             </div>
 
-            {/* Mobile Menu Button */}
-            <button 
-              className="md:hidden text-white hover:text-[#dfb15b] transition-colors p-2"
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            {/* Right: Mobile Menu Button */}
+            <div className="flex-1 flex justify-end z-10 md:hidden">
+              <button 
+                className="text-white hover:text-[#dfb15b] transition-colors p-2"
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
+
           </div>
         </div>
       </nav>
@@ -159,23 +168,59 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-30 bg-[#111111] pt-32 overflow-y-auto"
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ type: "tween", duration: 0.3 }}
+            className="fixed inset-y-0 right-0 w-full sm:w-80 z-30 bg-black shadow-2xl pt-28 overflow-y-auto"
           >
-            <div className="container mx-auto px-6 flex flex-col space-y-4 pb-12">
+            <div className="px-6 flex flex-col space-y-2 pb-12">
               {navLinks.map((link) => (
-                <div key={link.name} className="border-b border-gray-800 pb-2">
+                <div key={link.name} className="border-b border-gray-800">
                   {link.dropdown ? (
-                    <div className="block text-lg font-bold py-3 text-white uppercase tracking-wider">
-                      {link.name}
+                    <div>
+                      <button 
+                        className="w-full flex justify-between items-center py-4"
+                        onClick={() => setOpenDropdown(openDropdown === link.name ? null : link.name)}
+                      >
+                        <span className={`text-lg font-bold ${openDropdown === link.name ? 'text-[#dfb15b]' : 'text-white'}`}>
+                          {link.name}
+                        </span>
+                        <ChevronDown className={`w-5 h-5 transition-transform duration-300 text-[#dfb15b] ${openDropdown === link.name ? 'rotate-180' : ''}`} />
+                      </button>
+                      <AnimatePresence>
+                        {openDropdown === link.name && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            className="overflow-hidden"
+                          >
+                            <div className="pl-4 pb-4 space-y-4">
+                              {link.dropdown.map(dropItem => (
+                                <NavLink
+                                  key={dropItem.name}
+                                  to={dropItem.href}
+                                  className={({ isActive }) => 
+                                    `block text-[0.95rem] transition-colors ${
+                                      isActive ? 'text-[#dfb15b]' : 'text-gray-400 hover:text-white'
+                                    }`
+                                  }
+                                  onClick={() => setIsOpen(false)}
+                                >
+                                  {dropItem.name}
+                                </NavLink>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
                   ) : (
                     <NavLink 
                       to={link.href}
                       className={({ isActive }) => 
-                        `block text-lg font-bold py-3 uppercase tracking-wider ${
+                        `block text-lg font-bold py-4 ${
                           isActive ? 'text-[#dfb15b]' : 'text-white'
                         }`
                       }
@@ -183,24 +228,6 @@ export default function Navbar() {
                     >
                       {link.name}
                     </NavLink>
-                  )}
-                  {link.dropdown && (
-                    <div className="pl-4 pb-2 space-y-1">
-                      {link.dropdown.map(dropItem => (
-                        <NavLink
-                          key={dropItem.name}
-                          to={dropItem.href}
-                          className={({ isActive }) => 
-                            `block py-2.5 text-md transition-colors ${
-                              isActive ? 'text-[#dfb15b]' : 'text-gray-400 hover:text-white'
-                            }`
-                          }
-                          onClick={() => setIsOpen(false)}
-                        >
-                          - {dropItem.name}
-                        </NavLink>
-                      ))}
-                    </div>
                   )}
                 </div>
               ))}

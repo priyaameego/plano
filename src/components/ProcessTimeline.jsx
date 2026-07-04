@@ -25,20 +25,20 @@ const steps = [
 
 export default function ProcessTimeline() {
   return (
-    <section className="section-padding bg-white relative">
-      <div className="container mx-auto">
+    <section className="py-24 bg-[#111] relative overflow-hidden">
+      <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <span className="subtitle">How It Works</span>
-          <h2 className="heading-lg">
-            Your Journey to a <span className="text-navy-900">Perfect Smile</span>
+          <span className="text-[#dfb15b] font-semibold uppercase tracking-wider mb-4 block text-sm">How It Works</span>
+          <h2 className="text-4xl md:text-5xl font-light text-white uppercase tracking-wide">
+            Your Journey to a <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#e6c175] to-[#cca046]">Perfect Smile</span>
           </h2>
         </div>
 
         <div className="relative">
           {/* Connecting Line (Desktop) */}
-          <div className="hidden lg:block absolute top-12 left-0 right-0 h-1 bg-slate-100 -z-10">
+          <div className="hidden lg:block absolute top-12 left-0 right-0 h-[2px] bg-gray-800 -z-10">
             <motion.div 
-              className="h-full bg-gradient-to-r from-softblue-300 to-softblue-600"
+              className="h-full bg-gradient-to-r from-[#e6c175] to-[#cca046]"
               initial={{ width: 0 }}
               whileInView={{ width: "100%" }}
               viewport={{ once: true, margin: "-100px" }}
@@ -56,11 +56,11 @@ export default function ProcessTimeline() {
                 transition={{ duration: 0.5, delay: idx * 0.2 }}
                 className="relative text-center lg:text-left flex flex-col items-center lg:items-start group"
               >
-                <div className="w-24 h-24 rounded-full bg-white shadow-xl border-4 border-slate-50 flex items-center justify-center text-3xl font-extrabold text-navy-900 mb-6 group-hover:scale-110 group-hover:border-softblue-100 transition-all duration-300">
+                <div className="w-24 h-24 rounded-full bg-[#0a0a0a] shadow-2xl border border-gray-800 flex items-center justify-center text-3xl font-light text-white mb-6 group-hover:scale-110 group-hover:border-[#dfb15b] transition-all duration-300">
                   {step.num}
                 </div>
-                <h3 className="text-2xl font-bold text-navy-900 mb-3">{step.title}</h3>
-                <p className="text-slate-600">{step.desc}</p>
+                <h3 className="text-2xl font-semibold text-white mb-3 group-hover:text-[#dfb15b] transition-colors">{step.title}</h3>
+                <p className="text-gray-400 leading-relaxed">{step.desc}</p>
               </motion.div>
             ))}
           </div>

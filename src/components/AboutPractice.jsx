@@ -48,11 +48,14 @@ export default function AboutPractice() {
             <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Exceptional Care, <br/>Beautiful Smiles
             </motion.h2>
-            <motion.p variants={itemVariants} className="text-lg text-gray-600 mb-8 leading-relaxed">
-              At Dental Place of Plano, we believe that every patient deserves the highest standard of care in a warm and inviting atmosphere. As a <strong>Family-Owned & Operated</strong> practice, we treat our patients like our own family. Our <strong>Friendly & Experienced Team</strong> is committed to providing <strong>Personalized Patient Care</strong> that addresses your unique goals and concerns.
+            <motion.p variants={itemVariants} className="text-lg text-gray-600 mb-6 leading-relaxed">
+              Dental Place of Plano is a family-owned and operated dental practice led by Dr. Daniel Juma and Dr. Stephanie Lobo. Supported by a skilled, friendly, and experienced team, we are committed to delivering high-quality personalized care in a welcoming environment. Our doctors take the time to get to know each patient, carefully address concerns, and develop treatment plans tailored to individual needs. We believe in building lasting relationships and serving as trusted partners to achieve optimal oral health and confident smiles.
+            </motion.p>
+            <motion.p variants={itemVariants} className="text-lg text-gray-600 mb-6 leading-relaxed">
+              Our goal is to provide an exceptional patient experience through flexible scheduling, affordable financial options, and advanced treatment solutions. Using the latest dental technology, we deliver comprehensive, comfortable care for patients of all ages while creating healthy, beautiful smiles that last.
             </motion.p>
             <motion.p variants={itemVariants} className="text-lg text-gray-600 mb-10 leading-relaxed">
-              We proudly serve the vibrant <strong>Communities Served</strong> in and around Plano. By offering <strong>Flexible Scheduling</strong> and <strong>Affordable Financial Options</strong>, we ensure that achieving a healthy smile is completely stress-free.
+              Conveniently located at the intersection of Park Boulevard and Coit Road, Dental Place of Plano serves patients from Plano, Dallas, Frisco, McKinney, Allen, Richardson, Murphy, Carrollton, and surrounding communities. Our modern office is equipped with state-of-the-art imaging, monitoring, and surgical technology designed to maximize patient comfort and safety. We utilize advanced tools such as digital impressions, digital radiography, and 3D Cone Beam CT imaging. Our technology provides detailed three-dimensional views of the teeth, jaws, and surrounding structures, allowing Dr. Juma and Dr. Lobo to diagnose conditions more accurately and plan treatments with greater precision than traditional dental X-rays alone.
             </motion.p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">

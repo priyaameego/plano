@@ -1,13 +1,43 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { CircleDot } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 
 const stats = [
-  { value: "3k +", label: "Patients" },
-  { value: "5k +", label: "Implants" },
-  { value: "27k +", label: "Cosmetic Cases" },
-  { value: "10k +", label: "Smiles" },
+  { value: 3, suffix: "k +", label: "Patients" },
+  { value: 5, suffix: "k +", label: "Implants" },
+  { value: 27, suffix: "k +", label: "Cosmetic Cases" },
+  { value: 10, suffix: "k +", label: "Smiles" },
 ];
+
+const Counter = ({ value, suffix }) => {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-50px" });
+
+  useEffect(() => {
+    if (inView) {
+      const duration = 2000;
+      const startTime = performance.now();
+      
+      const animate = (currentTime) => {
+        const elapsedTime = currentTime - startTime;
+        const progress = Math.min(elapsedTime / duration, 1);
+        const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+        
+        setCount(Math.floor(easeOutQuart * value));
+        
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        } else {
+          setCount(value);
+        }
+      };
+      requestAnimationFrame(animate);
+    }
+  }, [inView, value]);
+
+  return <span ref={ref}>{count}{suffix}</span>;
+};
 
 const skills = [
   { label: "Advanced Technology", percent: 100 },
@@ -31,16 +61,18 @@ export default function HomeStatsAndSkills() {
     return () => clearInterval(timer);
   }, []);
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-6 lg:px-12 max-w-6xl">
+    <section className="py-20 bg-white/60 backdrop-blur-md relative overflow-hidden">
+      <div className="container mx-auto px-6 lg:px-12 max-w-6xl relative z-10">
         
         {/* Top Stats Row */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 mb-24">
           {stats.map((stat, idx) => (
             <div key={idx} className="flex flex-col items-center">
               {/* Gold Block */}
-              <div className="w-full aspect-[4/3] bg-gradient-to-br from-[#e6c175] to-[#cca046] flex items-center justify-center rounded-sm shadow-md mb-4">
-                <span className="text-4xl md:text-5xl lg:text-6xl text-white font-light">{stat.value}</span>
+              <div className="w-full aspect-[4/3] bg-gradient-to-br from-[#e6c175] to-[#cca046] flex items-center justify-center rounded-sm shadow-md mb-4 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                <span className="text-4xl md:text-5xl lg:text-6xl text-white font-light">
+                  <Counter value={stat.value} suffix={stat.suffix} />
+                </span>
               </div>
               {/* Label */}
               <span className="text-[#cca046] text-sm md:text-base font-semibold">{stat.label}</span>
