@@ -7,7 +7,7 @@ import CTA from '../components/CTA';
 
 export default function AboutUs() {
   return (
-    <main className="bg-white">
+    <main className="bg-white overflow-x-hidden">
       <AboutHero />
       <AboutPractice />
       <AboutDoctors />

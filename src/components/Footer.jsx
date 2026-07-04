@@ -1,5 +1,6 @@
 import { ArrowUp } from 'lucide-react';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -65,17 +66,16 @@ export default function Footer() {
             <ul className="space-y-3">
               {[
                 { name: 'Home', link: '/' },
-                { name: 'About Us', link: '/about-us' },
+                { name: 'About Us', link: '/about' },
                 { name: 'Book Now', link: '/book-now' },
-                { name: 'Patient Gallery', link: '/patient-gallery' },
                 { name: 'Testimonials', link: '/testimonials' },
                 { name: 'Contact Us', link: '/contact' }
               ].map((item, i) => (
                 <li key={i}>
-                  <a href={item.link} className="hover:text-[#dfb15b] transition-colors flex items-center gap-2">
+                  <Link to={item.link} className="hover:text-[#dfb15b] transition-colors flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#dfb15b]" />
                     {item.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -86,18 +86,18 @@ export default function Footer() {
             <h4 className="text-white font-bold text-xl mb-6">Featured Services</h4>
             <ul className="space-y-3">
               {[
-                { name: 'Dental Implants', link: '/dental-implants' },
-                { name: 'Navigated Surgery', link: '/navigated-surgery' },
-                { name: 'Preventive Care', link: '/preventive-care' },
-                { name: 'Veneer', link: '/veneer' },
-                { name: 'Root Canal', link: '/root-canal' },
-                { name: 'Extraction', link: '/extraction' }
+                { name: 'Dental Implants', link: '/services/dental-implants' },
+                { name: 'Navigated Surgery', link: '/services/navigated-surgery' },
+                { name: 'Preventive Care', link: '/services/preventive-care' },
+                { name: 'Veneer', link: '/services/veneer' },
+                { name: 'Root Canal', link: '/services/root-canal' },
+                { name: 'Extraction', link: '/services/extraction' }
               ].map((service, i) => (
                 <li key={i}>
-                  <a href={service.link} className="hover:text-[#dfb15b] transition-colors flex items-center gap-2">
+                  <Link to={service.link} className="hover:text-[#dfb15b] transition-colors flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#dfb15b]" />
                     {service.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -49,10 +49,15 @@ export default function Navbar() {
       <div className="bg-[#dfb15b] text-black text-xs sm:text-sm font-semibold py-2 px-4 z-50 relative">
         <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 max-w-7xl">
           <div className="flex flex-wrap justify-center sm:justify-start items-center gap-4 sm:gap-6">
-            <span className="flex items-center gap-1.5">
+            <a 
+              href="https://www.google.com/maps/place/Dental+Place+of+Plano/@33.029332,-96.7690026,17.17z/data=!4m6!3m5!1s0x864c226049c93f9d:0x3f617dca4dac35b3!8m2!3d33.0294235!4d-96.7689883!16s%2Fg%2F11g877z61j" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 hover:text-white transition-colors cursor-pointer"
+            >
               <MapPin className="w-4 h-4" />
               220 Coit Rd #570, Plano, TX 75075
-            </span>
+            </a>
             <span className="hidden md:flex items-center gap-1.5">
               <Clock className="w-4 h-4" />
               Mon-Sat: 9am - 6pm
