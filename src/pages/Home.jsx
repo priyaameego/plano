@@ -48,7 +48,6 @@ export default function Home() {
       <WhoWeAre />
       <HomeServicesBlocks />
       <HomeStatsAndSkills />
-      <InsuranceMarquee />
       <CTA />
     </main>
   );

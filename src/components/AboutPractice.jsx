@@ -1,134 +1,115 @@
 import { motion } from 'framer-motion';
-import { Heart, Users, Clock, CreditCard, Stethoscope, Microscope, Settings, Monitor, Target } from 'lucide-react';
+import { Check } from 'lucide-react';
 
-const highlights = [
-  { icon: Heart, title: 'Family-Owned & Operated', description: 'A welcoming practice built on trust and community values.' },
-  { icon: Users, title: 'Friendly & Experienced Team', description: 'Compassionate professionals dedicated to your smile.' },
-  { icon: Stethoscope, title: 'Personalized Patient Care', description: 'Tailored treatment plans for your unique needs.' },
-  { icon: Clock, title: 'Flexible Scheduling', description: 'Convenient appointment times to fit your busy life.' },
-  { icon: CreditCard, title: 'Affordable Financial Options', description: 'Making premium dental care accessible to everyone.' },
-  { icon: Microscope, title: 'Advanced Dental Technology', description: 'State-of-the-art equipment for precise results.' },
+const servicesList = [
+  'Root Canals', 'Bridges', 'Dental Implants',
+  'Veneer', 'Crowns', 'Orthodontics'
 ];
-
-const technologies = [
-  'Digital Impressions',
-  'Digital Radiography',
-  '3D Cone Beam CT Imaging',
-];
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 }
-  }
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-};
 
 export default function AboutPractice() {
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section className="py-24 bg-white">
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        
+        {/* Top Section: Text and Image */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-20">
           
-          {/* Content Column */}
+          {/* Left Text */}
           <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={containerVariants}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
-            <motion.span variants={itemVariants} className="text-[#dfb15b] font-bold tracking-widest uppercase text-sm mb-4 block">
-              Welcome to Dental Place of Plano
-            </motion.span>
-            <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Exceptional Care, <br/>Beautiful Smiles
-            </motion.h2>
-            <motion.p variants={itemVariants} className="text-lg text-gray-600 mb-6 leading-relaxed">
-              Dental Place of Plano is a family-owned and operated dental practice led by Dr. Daniel Juma and Dr. Stephanie Lobo. Supported by a skilled, friendly, and experienced team, we are committed to delivering high-quality personalized care in a welcoming environment. Our doctors take the time to get to know each patient, carefully address concerns, and develop treatment plans tailored to individual needs. We believe in building lasting relationships and serving as trusted partners to achieve optimal oral health and confident smiles.
-            </motion.p>
-            <motion.p variants={itemVariants} className="text-lg text-gray-600 mb-6 leading-relaxed">
-              Our goal is to provide an exceptional patient experience through flexible scheduling, affordable financial options, and advanced treatment solutions. Using the latest dental technology, we deliver comprehensive, comfortable care for patients of all ages while creating healthy, beautiful smiles that last.
-            </motion.p>
-            <motion.p variants={itemVariants} className="text-lg text-gray-600 mb-10 leading-relaxed">
-              Conveniently located at the intersection of Park Boulevard and Coit Road, Dental Place of Plano serves patients from Plano, Dallas, Frisco, McKinney, Allen, Richardson, Murphy, Carrollton, and surrounding communities. Our modern office is equipped with state-of-the-art imaging, monitoring, and surgical technology designed to maximize patient comfort and safety. We utilize advanced tools such as digital impressions, digital radiography, and 3D Cone Beam CT imaging. Our technology provides detailed three-dimensional views of the teeth, jaws, and surrounding structures, allowing Dr. Juma and Dr. Lobo to diagnose conditions more accurately and plan treatments with greater precision than traditional dental X-rays alone.
-            </motion.p>
+            <h2 className="text-4xl font-bold text-gray-800 mb-8 font-sans">
+              About Our Practice
+            </h2>
+            
+            <div className="text-gray-600 text-[15px] leading-8 space-y-6 mb-10">
+              <p>
+                Dental Place of Plano is a family owned and operated practice with two highly skilled and dedicated doctors,
+                Doctor Daniel Juma and Doctor Jeffrey He. They are supported by a friendly, experienced and professional
+                team, with a mission to provide our patients with consistent care of the highest quality. Patients can therefore
+                expect to always have the personal attention of their doctor who is committed to being a trusted partner in
+                their pursuit of great health and an amazing smile. Doctor Daniel Juma and Doctor Jeffrey He both endeavor
+                to spend ample time with each patient to ensure that all treatment needs are met and concerns addressed to
+                the best of their ability.
+              </p>
+              <p>
+                At Dental Place of Plano, it is our objective to offer an exceptional patient experience by offering flexible
+                hours of operation, a variety of financial alternatives, innovative treatment options using the latest technology
+                in order to provide personalized, pain free comprehensive dental care for the entire family while creating
+                uniquely beautiful smiles that last!
+              </p>
+            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-              {highlights.map((item, idx) => (
-                <motion.div key={idx} variants={itemVariants} className="flex gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center flex-shrink-0 text-[#dfb15b] shadow-sm border border-gray-100">
-                    <item.icon className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-gray-900">{item.title}</h4>
-                    <p className="text-sm text-gray-500 mt-1">{item.description}</p>
-                  </div>
-                </motion.div>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-y-4 gap-x-2">
+              {servicesList.map((service, index) => (
+                <div key={index} className="flex items-center gap-3">
+                  <Check className="w-5 h-5 text-[#d9af3f]" />
+                  <span className="text-gray-700 text-sm">{service}</span>
+                </div>
               ))}
             </div>
-
-            <motion.div variants={itemVariants} className="p-6 bg-slate-50 rounded-3xl border border-gray-100">
-              <h4 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <Settings className="w-5 h-5 text-[#dfb15b]" />
-                Advanced Dental Technology
-              </h4>
-              <ul className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                {technologies.map((tech, idx) => (
-                  <li key={idx} className="flex items-center gap-2 text-sm text-gray-700 font-medium">
-                    <Monitor className="w-4 h-4 text-[#dfb15b]" />
-                    {tech}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
           </motion.div>
 
-          {/* Image Column */}
+          {/* Right Image */}
           <motion.div 
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="relative"
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex justify-center lg:justify-end"
           >
-            <div className="aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl relative z-10">
-              <img 
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop" 
-                alt="Modern Dental Practice" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            
-            {/* Decorative Elements */}
-            <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-[#dfb15b]/20 rounded-full blur-3xl z-0"></div>
-            <div className="absolute -top-10 -right-10 w-64 h-64 bg-black/5 rounded-full blur-3xl z-0"></div>
-            
-            {/* Floating Badge */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-              className="absolute -left-8 top-1/4 bg-white p-6 rounded-3xl shadow-xl z-20 border border-gray-100 hidden md:block"
-            >
-              <div className="flex items-center gap-4">
-                <div className="w-14 h-14 bg-[#dfb15b]/10 rounded-full flex items-center justify-center text-[#dfb15b]">
-                  <Target className="w-7 h-7" />
-                </div>
-                <div>
-                  <p className="text-3xl font-bold text-gray-900">15+</p>
-                  <p className="text-sm font-medium text-gray-500 uppercase tracking-wider">Years of Excellence</p>
-                </div>
-              </div>
-            </motion.div>
+            <img 
+              src="https://dentalplaceofplano.com/wp-content/uploads/2021/02/Dan.png" 
+              alt="Dr. Daniel Juma" 
+              className="w-full max-w-[400px] object-contain drop-shadow-xl"
+            />
           </motion.div>
 
         </div>
+
+        {/* Bottom Section: Credentials, Experience, Convenience */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="space-y-16"
+        >
+          
+          <div>
+            <h3 className="text-3xl font-bold text-gray-800 mb-4 font-sans">Credentials</h3>
+            <p className="text-gray-600 text-[15px] leading-8">
+              Our Board Certified doctors are ADA recognized practitioners in General dentistry, with Dr Juma focusing on Oral Implantology. Dental Place of Plano provides a full
+              range of Whole Health Dental treatment including cosmetic and restorative dentistry, airway management, orthodontics, surgical procedures such as dental implant
+              placement, removal of wisdom teeth, bone grafting, and periodontal surgery. Dr Juma and Dr He are recognized as leaders in the profession, involved in researching
+              innovative techniques, educating colleagues, and serving in prominent positions in various professional associations including the Academy of General Dentistry, the
+              International Congress of Oral Implantology, Clear Correct Board Mentor, Fastbraces Master Provider.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-3xl font-bold text-gray-800 mb-4 font-sans">Experience</h3>
+            <p className="text-gray-600 text-[15px] leading-8">
+              As one of the premier dental implant practices in the DFW Metroplex, Dr Daniel Juma and Dr Jeffrey He have extensive experience providing general dentistry and
+              surgical dental implant procedures, including advanced techniques in Cosmetic and Restorative dentistry , Clear aligner Orthodontic treatement , bone grafting and
+              complex implant reconstruction. Our doctors here at Dental Place of Plano are highly regarded for their expertise in this highly technical field.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-3xl font-bold text-gray-800 mb-4 font-sans">Convenience</h3>
+            <p className="text-gray-600 text-[15px] leading-8">
+              Dental Place of Plano is conveniently located minutes from downtown Dallas and the surrounding cities of Frisco, Mckinney, Allen, Richardson, Murphy and Carrolton.
+              We are located at the intersection of Park and Coit road. Our modern practice has been renovated to include state-of-the-art imaging, monitoring and surgical
+              equipment designed to provide a safe and comfortable environment for our patients.
+            </p>
+          </div>
+
+        </motion.div>
+
       </div>
     </section>
   );

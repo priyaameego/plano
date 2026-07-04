@@ -106,17 +106,15 @@ export default function Navbar() {
                   ) : (
                     <NavLink 
                       to={link.href}
-                      className="flex items-center"
+                      className="flex items-center group"
                     >
                       {({ isActive }) => (
                         <>
                           {isActive && (
-                            <span className="text-[#dfb15b] font-black italic text-xl mr-1.5 leading-none transform -skew-x-12">
-                              /
-                            </span>
+                            <div className="w-[3px] h-[18px] bg-[#dfb15b] transform -skew-x-12 mr-2"></div>
                           )}
-                          <span className={`text-sm lg:text-[0.95rem] font-semibold transition-colors ${
-                            isActive ? 'text-white' : 'text-gray-300 hover:text-white'
+                          <span className={`text-sm lg:text-[0.95rem] font-semibold transition-colors flex items-center h-full ${
+                            isActive ? 'text-white' : 'text-gray-300 group-hover:text-white'
                           }`}>
                             {link.name}
                           </span>

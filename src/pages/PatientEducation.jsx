@@ -7,16 +7,16 @@ export default function PatientEducation() {
 
   const videos = [
     {
-      title: 'The Importance of Flossing',
-      desc: 'Discover why brushing alone isn\'t enough and how flossing prevents gum disease and decay.',
-      thumbnail: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop',
-      videoUrl: 'https://www.youtube.com/embed/ScMzIvxBSi4' // Placeholder video
+      title: 'Dental Implants - High-Tech Teeth',
+      desc: 'Learn about the high-tech procedure of dental implants and how they can restore your smile.',
+      thumbnail: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop',
+      videoUrl: 'https://icoivideos.com/wp-content/themes/deardoctor/inc/video/page-generate-embed.php?callback=parTest&parDirectoryID=62202&parFullName=%20&parVideoName=Dental%20Implants%20-%20High-Tech%20Teeth&parPhone=214-942-0101&parUrl=www.penndentaldfw.com&parVideoCodeName=icoi-overview&parAutoPlay=true'
     },
     {
-      title: 'Understanding Dental Implants',
-      desc: 'Everything you need to know about replacing missing teeth with durable, natural-looking implants.',
-      thumbnail: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop',
-      videoUrl: 'https://www.youtube.com/embed/ScMzIvxBSi4'
+      title: 'Consequences of Missing Teeth',
+      desc: 'Understand the impact of missing teeth on your oral health and explore replacement options.',
+      thumbnail: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800&auto=format&fit=crop',
+      videoUrl: 'https://icoivideos.com/wp-content/themes/deardoctor/inc/video/page-generate-embed.php?callback=parTest&parDirectoryID=62202&parFullName=%20&parVideoName=Consequences%20of%20Missing%20Teeth&parPhone=214-942-0101&parUrl=www.penndentaldfw.com&parVideoCodeName=icoi-consequences&parAutoPlay=true'
     },
     {
       title: 'Preventing Gum Disease',

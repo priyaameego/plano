@@ -44,9 +44,18 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-bold text-xl mb-6">Office Hours</h4>
             <ul className="space-y-3">
-              <li className="flex justify-between"><span>Monday - Friday:</span> <span className="text-white">8:00 AM - 5:00 PM</span></li>
-              <li className="flex justify-between"><span>Saturday:</span> <span className="text-white">By Appointment</span></li>
-              <li className="flex justify-between"><span>Sunday:</span> <span className="text-white">Closed</span></li>
+              <li className="flex justify-start">
+                <span className="w-36 text-gray-400">Monday - Friday:</span> 
+                <span className="text-white">8:00 AM - 5:00 PM</span>
+              </li>
+              <li className="flex justify-start">
+                <span className="w-36 text-gray-400">Saturday:</span> 
+                <span className="text-white">By Appointment</span>
+              </li>
+              <li className="flex justify-start">
+                <span className="w-36 text-gray-400">Sunday:</span> 
+                <span className="text-white">Closed</span>
+              </li>
             </ul>
           </div>
 
@@ -54,11 +63,18 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-bold text-xl mb-6">Quick Links</h4>
             <ul className="space-y-3">
-              {['Home', 'About Us', 'Book Now', 'Patient Gallery', 'Testimonials', 'Contact Us'].map((link, i) => (
+              {[
+                { name: 'Home', link: '/' },
+                { name: 'About Us', link: '/about-us' },
+                { name: 'Book Now', link: '/book-now' },
+                { name: 'Patient Gallery', link: '/patient-gallery' },
+                { name: 'Testimonials', link: '/testimonials' },
+                { name: 'Contact Us', link: '/contact' }
+              ].map((item, i) => (
                 <li key={i}>
-                  <a href={link === 'Book Now' ? '/book-now' : '#'} className="hover:text-[#dfb15b] transition-colors flex items-center gap-2">
+                  <a href={item.link} className="hover:text-[#dfb15b] transition-colors flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#dfb15b]" />
-                    {link}
+                    {item.name}
                   </a>
                 </li>
               ))}

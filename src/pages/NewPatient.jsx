@@ -23,75 +23,50 @@ export default function NewPatient() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
-            className="bg-white p-10 rounded-[2rem] shadow-lg shadow-gray-200/50 border border-gray-100 hover:shadow-xl transition-shadow duration-300 relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gray-50 rounded-bl-full opacity-50"></div>
-            <h2 className="text-2xl font-bold mb-6 text-gray-800 border-b pb-4 relative z-10">Your First Visit</h2>
-            <ul className="space-y-6 relative z-10">
-              <li className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-[#dfb15b]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#dfb15b]/20 transition-colors">
-                  <Clock className="w-6 h-6 text-[#dca843]" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg text-gray-900">Comprehensive Exam</h3>
-                  <p className="text-gray-600 leading-relaxed mt-1">Your first visit will include a thorough examination of your teeth, gums, and overall oral health.</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-[#dfb15b]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#dfb15b]/20 transition-colors">
-                  <Smile className="w-6 h-6 text-[#dca843]" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg text-gray-900">Personalized Care Plan</h3>
-                  <p className="text-gray-600 leading-relaxed mt-1">We will discuss your dental goals and create a custom treatment plan tailored specifically for you.</p>
-                </div>
-              </li>
-            </ul>
-          </motion.div>
-
-          <motion.div 
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3 }}
-            className="bg-[#111] text-white p-10 rounded-[2rem] shadow-xl shadow-gray-900/20 relative overflow-hidden group hover:scale-[1.01] transition-transform duration-300"
-          >
-            <div className="absolute -top-10 -right-10 w-48 h-48 bg-[#dfb15b] rounded-full opacity-20 blur-3xl group-hover:opacity-30 transition-opacity"></div>
-            <h2 className="text-2xl font-bold mb-6 text-[#dfb15b] border-b border-gray-800 pb-4 relative z-10">New Patient Forms</h2>
-            <p className="mb-8 text-gray-300 leading-relaxed relative z-10">
-              Save time during your first visit by filling out our new patient forms online. It's quick, secure, and goes directly to our system.
+        <div className="grid grid-cols-1 gap-12 text-[#333333] mt-10">
+          
+          <div className="space-y-6">
+            <h2 className="text-3xl font-bold font-sans">During your appointment</h2>
+            <p className="text-[15px] leading-8">
+              Either Dr. Daniel Juma will examine you and discuss your concerns and expectations regarding your dental health and designs for a brighter, whiter and beautiful smile.
             </p>
-            <a href="#" className="inline-flex items-center gap-2 bg-[#dfb15b] text-black font-bold py-4 px-8 rounded-full hover:bg-white transition-all duration-300 hover:shadow-lg relative z-10">
-              <FileText className="w-5 h-5" />
-              Complete Forms Online
-            </a>
-          </motion.div>
-        </div>
-
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="text-center"
-        >
-          <h2 className="text-2xl font-bold mb-8 text-gray-900">What to Bring</h2>
-          <div className="flex flex-wrap justify-center gap-4">
-            {['Valid Photo ID', 'Insurance Card', 'List of Medications', 'Previous Dental Records'].map((item, idx) => (
-              <motion.div 
-                whileHover={{ y: -3 }}
-                key={idx} 
-                className="bg-white px-6 py-4 rounded-full shadow-sm border border-gray-100 flex items-center gap-3 font-medium text-gray-700 hover:shadow-md hover:border-[#dfb15b]/30 transition-all cursor-default"
-              >
-                <CheckCircle className="w-5 h-5 text-[#dfb15b]" />
-                {item}
-              </motion.div>
-            ))}
+            <p className="text-[15px] leading-8">
+              Dr. Juma would both like to encourage a lifetime of healthy smiles and will therefore focus on patient education. Having an appointment that is exclusively yours also allows ample time with us to ensure that all your concerns are addressed.
+            </p>
+            <p className="text-[15px] leading-8">
+              We recommend our patients plan on 60 to 90 minutes for a new patient visit. At Dental Place of Plano, we take pride in personalizing our patient experience. We realize the uniqueness of each patient's general and dental health and consequently, we take seriously your responses to the patient information questionnaires.
+            </p>
           </div>
-        </motion.div>
+
+          <div className="space-y-6">
+            <h2 className="text-3xl font-bold font-sans">Same day treatment</h2>
+            <p className="text-[15px] leading-8">
+              We are happy to accommodate any immediate treatment needs following your initial or consequent visits for your convenience whenever possible.
+            </p>
+          </div>
+
+          <div className="space-y-6 mt-8">
+            <h2 className="text-3xl font-bold font-sans">Before your appointment</h2>
+            <p className="text-[15px] leading-8 mb-2">
+              Remember to bring these with you to your first appointment:<br/>
+              Picture ID and Insurance card (if applicable)
+            </p>
+            
+            <p className="text-[15px] leading-8">
+              If you are a new patient, please follow the link below to fill out the electronic forms before your first appointment. Having forms completed before you come in will help us to ensure you are seen in a timely manner.
+            </p>
+
+            <ul className="list-disc pl-8 space-y-2 text-[15px]">
+              <li><a href="#" className="hover:text-[#dfb15b] transition-colors font-medium">New Patient Forms</a></li>
+              <li><a href="#" className="hover:text-[#dfb15b] transition-colors font-medium">Consent Forms</a></li>
+            </ul>
+
+            <p className="text-[15px] leading-8 mt-6">
+              We understand that you have a busy schedule, so when you're preparing to visit the dentist, please remember that your appointments can last between 45 and 90 minutes.
+            </p>
+          </div>
+
+        </div>
       </div>
 
       {/* CTA Section */}

@@ -1,13 +1,7 @@
-
-
 export default function InsuranceMarquee() {
   return (
     <section className="py-12 bg-white border-y border-slate-100">
-      <div className="container mx-auto px-6 mb-6">
-        <p className="text-center text-slate-500 font-semibold uppercase tracking-wider text-sm">
-          We accept most major insurance plans
-        </p>
-      </div>
+      {/* Removed the text as requested */}
       
       <div className="relative flex overflow-hidden">
         <div className="flex animate-marquee whitespace-nowrap">

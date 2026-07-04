@@ -126,12 +126,12 @@ export default function Contact() {
                 className="w-full px-6 py-5 rounded-3xl border-[2.5px] border-[#dfb15b] focus:outline-none focus:ring-4 focus:ring-[#dfb15b]/20 transition-all text-gray-700 placeholder-gray-500 resize-none"
               ></textarea>
 
-              {/* Interactive Cloudflare Mock */}
-              <div
-                className="max-w-xs bg-[#fafafa] border border-gray-200 rounded-sm p-4 flex items-center justify-between shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+              {/* Interactive Google reCAPTCHA Mock */}
+              <div 
+                className="w-full max-w-[300px] bg-[#f9f9f9] border border-[#d3d3d3] rounded-sm p-4 flex items-center justify-between shadow-sm cursor-pointer hover:bg-gray-50 transition-colors"
                 onClick={handleVerify}
               >
-                <div className="flex items-center gap-3 w-40">
+                <div className="flex items-center gap-3">
                   <AnimatePresence mode="wait">
                     {cloudflareState === 'initial' && (
                       <motion.div
@@ -139,7 +139,7 @@ export default function Contact() {
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.8 }}
-                        className="w-8 h-8 rounded flex items-center justify-center border-2 border-gray-300 bg-white"
+                        className="w-7 h-7 rounded-sm border-2 border-[#c1c1c1] bg-white hover:border-[#a0a0a0] transition-colors"
                       >
                       </motion.div>
                     )}
@@ -149,9 +149,9 @@ export default function Contact() {
                         initial={{ opacity: 0, rotate: -90 }}
                         animate={{ opacity: 1, rotate: 0 }}
                         exit={{ opacity: 0 }}
-                        className="w-8 h-8 flex items-center justify-center"
+                        className="w-7 h-7 flex items-center justify-center"
                       >
-                        <Loader2 className="w-6 h-6 text-[#F38020] animate-spin" />
+                        <Loader2 className="w-6 h-6 text-blue-600 animate-spin" />
                       </motion.div>
                     )}
                     {cloudflareState === 'success' && (
@@ -159,28 +159,34 @@ export default function Contact() {
                         key="success"
                         initial={{ opacity: 0, scale: 0 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        className="bg-green-600 rounded-full flex items-center justify-center w-8 h-8"
+                        className="w-7 h-7 flex items-center justify-center"
                       >
-                        <CheckCircle2 className="w-5 h-5 text-white" />
+                        <svg className="w-8 h-8 text-green-600 drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
                       </motion.div>
                     )}
                   </AnimatePresence>
-
-                  <span className="text-gray-700 text-sm font-medium">
-                    {cloudflareState === 'initial' && 'Verify you are human'}
-                    {cloudflareState === 'verifying' && 'Verifying...'}
-                    {cloudflareState === 'success' && 'Success!'}
+                  
+                  <span className="text-[#282828] text-[14px] font-medium ml-1">
+                    I'm not a robot
                   </span>
                 </div>
-
-                <div className="flex flex-col items-end">
-                  <div className="flex items-center gap-1 font-bold text-gray-600 tracking-tight text-md">
-                    <svg className="w-5 h-5 text-[#F38020]" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M19.4 8.7C19 5 15.8 2 12 2 8.7 2 5.8 4 4.5 6.9c-2.5.3-4.5 2.5-4.5 5.1 0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5 0-2.4-1.7-4.4-4-4.9l-.6-.4z" />
-                    </svg>
-                    CLOUDFLARE
+                
+                <div className="flex flex-col items-center justify-center">
+                  <img 
+                    src="https://www.gstatic.com/recaptcha/api2/logo_48.png" 
+                    alt="reCAPTCHA" 
+                    className="w-8 h-8 object-contain"
+                  />
+                  <div className="text-[10px] text-[#555] mt-1 font-sans">
+                    reCAPTCHA
                   </div>
-                  <div className="text-[10px] text-gray-500">Privacy • Help</div>
+                  <div className="text-[8px] text-[#555] space-x-1 mt-0.5">
+                    <span className="hover:underline">Privacy</span>
+                    <span>-</span>
+                    <span className="hover:underline">Terms</span>
+                  </div>
                 </div>
               </div>
 
