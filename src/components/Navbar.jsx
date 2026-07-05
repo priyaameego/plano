@@ -8,6 +8,7 @@ const navLinks = [
   { name: 'About Us', href: '/about' },
   { 
     name: 'Services', 
+    href: '/services',
     dropdown: [
       { name: 'Dental Implants', href: '/services/dental-implants' },
       { name: 'Invisalign', href: '/services/invisalign' },
@@ -100,14 +101,33 @@ export default function Navbar() {
               {navLinks.map((link) => (
                 <div key={link.name} className="relative group py-4">
                   {link.dropdown ? (
-                    <div className="flex items-center cursor-pointer">
-                      <span className="text-sm lg:text-[0.95rem] font-semibold transition-colors text-gray-300 group-hover:text-white">
-                        {link.name}
-                      </span>
-                      <svg className="w-4 h-4 ml-1 text-gray-400 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </div>
+                    link.href ? (
+                      <NavLink to={link.href} className="flex items-center cursor-pointer group">
+                        {({ isActive }) => (
+                          <>
+                            <span className={`text-sm lg:text-[0.95rem] font-semibold transition-colors ${
+                              isActive ? 'text-white' : 'text-gray-300 group-hover:text-white'
+                            }`}>
+                              {link.name}
+                            </span>
+                            <svg className={`w-4 h-4 ml-1 transition-colors ${
+                              isActive ? 'text-[#dfb15b]' : 'text-gray-400 group-hover:text-white'
+                            }`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </>
+                        )}
+                      </NavLink>
+                    ) : (
+                      <div className="flex items-center cursor-pointer group">
+                        <span className="text-sm lg:text-[0.95rem] font-semibold transition-colors text-gray-300 group-hover:text-white">
+                          {link.name}
+                        </span>
+                        <svg className="w-4 h-4 ml-1 text-gray-400 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    )
                   ) : (
                     <NavLink 
                       to={link.href}

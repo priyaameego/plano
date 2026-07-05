@@ -67,6 +67,7 @@ export default function Footer() {
               {[
                 { name: 'Home', link: '/' },
                 { name: 'About Us', link: '/about' },
+                { name: 'Services', link: '/services' },
                 { name: 'Book Now', link: '/book-now' },
                 { name: 'Testimonials', link: '/testimonials' },
                 { name: 'Contact Us', link: '/contact' }
