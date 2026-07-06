@@ -104,10 +104,13 @@ export default function HomeStatsAndSkills() {
                   </div>
                   {/* Progress Bar */}
                   <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
-                    <div 
+                    <motion.div 
                       className="h-full bg-[#cca046]"
-                      style={{ width: `${skill.percent}%` }}
-                    ></div>
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${skill.percent}%` }}
+                      viewport={{ once: true, margin: "-50px" }}
+                      transition={{ duration: 1.5, ease: "easeOut" }}
+                    ></motion.div>
                   </div>
                 </div>
               ))}

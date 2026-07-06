@@ -16,7 +16,7 @@ export default function Financial() {
               </p>
               
               <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/4/48/CareCredit_Logo.svg" 
+                src="https://cdn.worldvectorlogo.com/logos/carecredit.svg" 
                 alt="CareCredit" 
                 className="h-10 object-contain"
               />
@@ -45,11 +45,11 @@ export default function Financial() {
             </button>
             
             <div className="w-full flex flex-wrap md:flex-nowrap items-center justify-between px-6 md:px-4 gap-8">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/UnitedHealthcare_logo.svg/1200px-UnitedHealthcare_logo.svg.png" alt="UnitedHealthcare" className="h-10 w-auto object-contain" />
-              <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f6/Delta_Dental_logo.svg/1200px-Delta_Dental_logo.svg.png" alt="Delta Dental" className="h-12 w-auto object-contain" />
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/BlueCross_BlueShield.svg/1200px-BlueCross_BlueShield.svg.png" alt="BlueCross BlueShield" className="h-16 w-auto object-contain" />
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Aetna_logo.svg/1200px-Aetna_logo.svg.png" alt="Aetna" className="h-9 w-auto object-contain" />
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Cigna_logo.svg/1200px-Cigna_logo.svg.png" alt="Cigna" className="h-14 w-auto object-contain" />
+              <img src="/logos/aetna.png" alt="Aetna" className="h-9 w-auto object-contain" />
+              <img src="/logos/metlife.png" alt="MetLife" className="h-10 w-auto object-contain" />
+              <img src="/logos/cigna.png" alt="Cigna" className="h-12 w-auto object-contain" />
+              <img src="/logos/bcbs.png" alt="BlueCross BlueShield" className="h-14 w-auto object-contain" />
+              <img src="/logos/delta.png" alt="Delta Dental" className="h-10 w-auto object-contain" />
             </div>
 
             <button className="absolute -right-4 md:-right-8 z-10 text-gray-500 hover:text-black transition-colors">

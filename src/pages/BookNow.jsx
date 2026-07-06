@@ -147,7 +147,7 @@ export default function BookNow() {
                 >
                   
                   {/* Toggle: New vs Returning */}
-                  <div className="flex justify-center mb-16">
+                  <div className="flex justify-center mb-16 mt-8">
                     <fieldset className="border border-slate-300 rounded-xl p-2 pb-0 pt-6 relative inline-block bg-slate-50 shadow-sm">
                       <legend className="text-lg md:text-xl font-serif font-bold text-slate-800 px-4 text-center absolute -top-4 left-1/2 -translate-x-1/2 bg-white w-max">Are you a new or returning patient?</legend>
                       <div className="flex relative mt-4 md:mt-2 mb-2 p-1 bg-gray-200 rounded-lg overflow-hidden flex-col md:flex-row">
