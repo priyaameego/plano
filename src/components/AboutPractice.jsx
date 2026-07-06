@@ -1,115 +1,126 @@
 import { motion } from 'framer-motion';
-import { Check } from 'lucide-react';
-
-const servicesList = [
-  'Root Canals', 'Bridges', 'Dental Implants',
-  'Veneer', 'Crowns', 'Orthodontics'
-];
+import { MapPin, Cpu, Heart, Clock, DollarSign, Users, CheckCircle2 } from 'lucide-react';
 
 export default function AboutPractice() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-slate-50 overflow-hidden">
       <div className="container mx-auto px-6 max-w-7xl">
-        
-        {/* Top Section: Text and Image */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
-          {/* Left Text */}
+          {/* Left Column - Content */}
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.7 }}
           >
-            <h2 className="text-4xl font-bold text-gray-800 mb-8 font-sans">
-              About Our Practice
+            <span className="text-[#dfb15b] font-bold tracking-widest uppercase text-sm mb-3 block">Welcome to Dental Place of Plano</span>
+            <h2 className="text-4xl md:text-5xl font-serif text-gray-900 mb-8 leading-tight">
+              A Family-Owned Practice Focused on You
             </h2>
             
-            <div className="text-gray-600 text-[15px] leading-8 space-y-6 mb-10">
-              <p>
-                Dental Place of Plano is a family owned and operated practice with two highly skilled and dedicated doctors,
-                Doctor Daniel Juma and Doctor Jeffrey He. They are supported by a friendly, experienced and professional
-                team, with a mission to provide our patients with consistent care of the highest quality. Patients can therefore
-                expect to always have the personal attention of their doctor who is committed to being a trusted partner in
-                their pursuit of great health and an amazing smile. Doctor Daniel Juma and Doctor Jeffrey He both endeavor
-                to spend ample time with each patient to ensure that all treatment needs are met and concerns addressed to
-                the best of their ability.
-              </p>
-              <p>
-                At Dental Place of Plano, it is our objective to offer an exceptional patient experience by offering flexible
-                hours of operation, a variety of financial alternatives, innovative treatment options using the latest technology
-                in order to provide personalized, pain free comprehensive dental care for the entire family while creating
-                uniquely beautiful smiles that last!
-              </p>
-            </div>
+            <p className="text-gray-600 text-lg leading-relaxed mb-8">
+              Led by Dr. Daniel Juma and Dr. Stephanie Lobo, our practice is dedicated to providing personalized, patient-focused care in a welcoming environment. 
+              Our friendly and experienced team is here to ensure that every visit is comfortable, effective, and tailored to your unique needs.
+            </p>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-y-4 gap-x-2">
-              {servicesList.map((service, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-[#d9af3f]" />
-                  <span className="text-gray-700 text-sm">{service}</span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+              <div className="flex items-start gap-4">
+                <div className="bg-white p-3 rounded-xl shadow-sm">
+                  <Users className="w-6 h-6 text-[#d9af3f]" />
                 </div>
-              ))}
+                <div>
+                  <h4 className="font-bold text-gray-800">Experienced Team</h4>
+                  <p className="text-sm text-gray-500 mt-1">Friendly, professional, and dedicated care.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="bg-white p-3 rounded-xl shadow-sm">
+                  <Heart className="w-6 h-6 text-[#d9af3f]" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-gray-800">Patient-Focused</h4>
+                  <p className="text-sm text-gray-500 mt-1">Personalized treatments for your smile.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="bg-white p-3 rounded-xl shadow-sm">
+                  <Clock className="w-6 h-6 text-[#d9af3f]" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-gray-800">Flexible Scheduling</h4>
+                  <p className="text-sm text-gray-500 mt-1">Appointments that fit your lifestyle.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="bg-white p-3 rounded-xl shadow-sm">
+                  <DollarSign className="w-6 h-6 text-[#d9af3f]" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-gray-800">Affordable Options</h4>
+                  <p className="text-sm text-gray-500 mt-1">Flexible financial plans available.</p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Communities Served */}
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 transition-all hover:shadow-md">
+              <div className="flex items-center gap-3 mb-3">
+                <MapPin className="w-5 h-5 text-[#8a3324]" />
+                <h4 className="font-bold text-gray-800 text-lg">Communities We Serve</h4>
+              </div>
+              <p className="text-gray-600 leading-relaxed">
+                Plano, Dallas, Frisco, McKinney, Allen, Richardson, Murphy, Carrollton, and surrounding areas.
+              </p>
             </div>
           </motion.div>
 
-          {/* Right Image */}
+          {/* Right Column - Image & Tech */}
           <motion.div 
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="flex justify-center lg:justify-end"
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="relative"
           >
-            <img 
-              src="https://dentalplaceofplano.com/wp-content/uploads/2021/02/Dan.png" 
-              alt="Dr. Daniel Juma" 
-              className="w-full max-w-[400px] object-contain drop-shadow-xl"
-            />
+            <div className="relative rounded-3xl overflow-hidden shadow-[0_20px_50px_-12px_rgba(0,0,0,0.2)] group">
+              <img 
+                src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1974&auto=format&fit=crop" 
+                alt="Modern Dental Technology" 
+                className="w-full h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+              
+              {/* Technology Overlay */}
+              <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="bg-[#dfb15b]/20 p-3 rounded-full backdrop-blur-sm">
+                    <Cpu className="w-6 h-6 text-[#dfb15b]" />
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-serif text-white font-bold">Advanced Technology</h3>
+                </div>
+                <ul className="space-y-4">
+                  <li className="flex items-center gap-4 text-white/95 bg-black/20 p-3 rounded-lg backdrop-blur-sm">
+                    <CheckCircle2 className="w-6 h-6 text-[#dfb15b] shrink-0" />
+                    <span className="font-medium text-lg">Digital Impressions</span>
+                  </li>
+                  <li className="flex items-center gap-4 text-white/95 bg-black/20 p-3 rounded-lg backdrop-blur-sm">
+                    <CheckCircle2 className="w-6 h-6 text-[#dfb15b] shrink-0" />
+                    <span className="font-medium text-lg">Digital Radiography</span>
+                  </li>
+                  <li className="flex items-center gap-4 text-white/95 bg-black/20 p-3 rounded-lg backdrop-blur-sm">
+                    <CheckCircle2 className="w-6 h-6 text-[#dfb15b] shrink-0" />
+                    <span className="font-medium text-lg">3D Cone Beam CT Imaging</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            {/* Decorative Element */}
+            <div className="absolute -z-10 -bottom-6 -right-6 w-full h-full border-2 border-[#dfb15b] rounded-3xl"></div>
           </motion.div>
 
         </div>
-
-        {/* Bottom Section: Credentials, Experience, Convenience */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="space-y-16"
-        >
-          
-          <div>
-            <h3 className="text-3xl font-bold text-gray-800 mb-4 font-sans">Credentials</h3>
-            <p className="text-gray-600 text-[15px] leading-8">
-              Our Board Certified doctors are ADA recognized practitioners in General dentistry, with Dr Juma focusing on Oral Implantology. Dental Place of Plano provides a full
-              range of Whole Health Dental treatment including cosmetic and restorative dentistry, airway management, orthodontics, surgical procedures such as dental implant
-              placement, removal of wisdom teeth, bone grafting, and periodontal surgery. Dr Juma and Dr He are recognized as leaders in the profession, involved in researching
-              innovative techniques, educating colleagues, and serving in prominent positions in various professional associations including the Academy of General Dentistry, the
-              International Congress of Oral Implantology, Clear Correct Board Mentor, Fastbraces Master Provider.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-3xl font-bold text-gray-800 mb-4 font-sans">Experience</h3>
-            <p className="text-gray-600 text-[15px] leading-8">
-              As one of the premier dental implant practices in the DFW Metroplex, Dr Daniel Juma and Dr Jeffrey He have extensive experience providing general dentistry and
-              surgical dental implant procedures, including advanced techniques in Cosmetic and Restorative dentistry , Clear aligner Orthodontic treatement , bone grafting and
-              complex implant reconstruction. Our doctors here at Dental Place of Plano are highly regarded for their expertise in this highly technical field.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-3xl font-bold text-gray-800 mb-4 font-sans">Convenience</h3>
-            <p className="text-gray-600 text-[15px] leading-8">
-              Dental Place of Plano is conveniently located minutes from downtown Dallas and the surrounding cities of Frisco, Mckinney, Allen, Richardson, Murphy and Carrolton.
-              We are located at the intersection of Park and Coit road. Our modern practice has been renovated to include state-of-the-art imaging, monitoring and surgical
-              equipment designed to provide a safe and comfortable environment for our patients.
-            </p>
-          </div>
-
-        </motion.div>
-
       </div>
     </section>
   );

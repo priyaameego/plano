@@ -1,81 +1,40 @@
-import { useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const officeImages = [
-  'https://dentalplaceofplano.com/wp-content/uploads/2024/09/2d4025eb99b2ad6d513e45ebb4108a60a26145ca.jpg',
-  'https://dentalplaceofplano.com/wp-content/uploads/2024/09/69f4a9412dd45945ed3e7c48830e3b423aa31c69.jpg',
-  'https://dentalplaceofplano.com/wp-content/uploads/2024/09/44a0a4977dd9b719cb7b80f7b138c0c731c61147.jpg',
-  'https://dentalplaceofplano.com/wp-content/uploads/2024/09/2d4025eb99b2ad6d513e45ebb4108a60a26145ca.jpg',
-  'https://dentalplaceofplano.com/wp-content/uploads/2024/09/e3fe5fc5ba3f5f1d6b858bdde7e34b4e909c6a8f.jpg',
-  'https://dentalplaceofplano.com/wp-content/uploads/2024/09/fc29dadd22f977807f3bfdbb7d060930aac076da.jpg'
+  'https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2070&auto=format&fit=crop', 
+  'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1974&auto=format&fit=crop', 
+  'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2070&auto=format&fit=crop', 
 ];
 
 export default function OfficeGallery() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % officeImages.length);
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + officeImages.length) % officeImages.length);
-  };
-
-  // Helper to get visible images
-  const getVisibleImages = () => {
-    const images = [];
-    for (let i = 0; i < 3; i++) {
-      images.push(officeImages[(currentIndex + i) % officeImages.length]);
-    }
-    return images;
-  };
-
-  const visibleImages = getVisibleImages();
-
   return (
-    <section className="py-20 bg-white">
+    <section className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-6 max-w-7xl">
-        <h2 className="text-4xl font-bold text-gray-800 mb-12 font-sans">
-          Office
-        </h2>
+        <div className="text-center mb-16">
+          <span className="text-[#dfb15b] font-bold tracking-widest uppercase text-sm mb-3 block">Tour Our Clinic</span>
+          <h2 className="text-4xl md:text-5xl font-serif text-gray-900 leading-tight">
+            Our Modern Office
+          </h2>
+        </div>
 
-        <div className="relative flex items-center">
-          
-          <button 
-            onClick={handlePrev}
-            className="absolute -left-4 md:-left-12 z-10 p-2 text-gray-400 hover:text-[#d9af3f] transition-colors"
-          >
-            <ChevronLeft className="w-8 h-8" />
-          </button>
-
-          <div className="w-full overflow-hidden">
-            <div className="flex gap-6 justify-center">
-              {visibleImages.map((src, index) => (
-                <motion.div 
-                  key={`${currentIndex}-${index}`}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="w-full md:w-1/3 aspect-square"
-                >
-                  <img 
-                    src={src} 
-                    alt={`Office Gallery ${index + 1}`} 
-                    className="w-full h-full object-cover shadow-sm"
-                  />
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          <button 
-            onClick={handleNext}
-            className="absolute -right-4 md:-right-12 z-10 p-2 text-gray-400 hover:text-[#d9af3f] transition-colors"
-          >
-            <ChevronRight className="w-8 h-8" />
-          </button>
-
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {officeImages.map((src, index) => (
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className="relative rounded-3xl overflow-hidden shadow-[0_15px_40px_-15px_rgba(0,0,0,0.15)] group aspect-[4/5] md:aspect-[3/4]"
+            >
+              <img 
+                src={src} 
+                alt={`Office Gallery ${index + 1}`} 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

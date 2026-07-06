@@ -31,6 +31,11 @@ export default function AboutHero() {
           <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed">
             Where advanced technology meets compassionate, personalized care. We are dedicated to providing a luxurious and comfortable dental experience for you and your family.
           </p>
+          <div className="mt-10">
+            <a href="/book-now" className="inline-block bg-[#dfb15b] text-white font-bold py-4 px-10 rounded-full hover:bg-[#cda049] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_30px_-10px_rgba(223,177,91,0.5)]">
+              Book an Appointment
+            </a>
+          </div>
         </motion.div>
       </div>
 

@@ -6,11 +6,6 @@ export default function ImplantCosmeticSection() {
       {/* Left Content */}
       <div className="w-full bg-[#d9b73c] flex flex-col items-center justify-center p-12 lg:p-16 text-center">
         <div className="mb-6">
-          {/* Custom Tooth SVG Icon */}
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="black" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M10 21c-2.43-.88-3-2.9-3-4V8c0-2.3 2-4 5-4s5 1.7 5 4v9c0 1.1-.57 3.12-3 4-1 0-2-1-2-1s-1 1-2 1z"/>
-            <line x1="12" y1="21" x2="12" y2="17"/>
-          </svg>
         </div>
         <h2 className="text-3xl font-bold text-black mb-6">Implant Dentistry</h2>
         <p className="text-black/80 leading-relaxed text-sm max-w-sm mx-auto">
@@ -27,7 +22,6 @@ export default function ImplantCosmeticSection() {
       {/* Right Content */}
       <div className="w-full bg-[#d9b73c] flex flex-col items-center justify-center p-12 lg:p-16 text-center">
         <div className="mb-6">
-          <Crown className="text-black fill-black w-8 h-8" />
         </div>
         <h2 className="text-3xl font-bold text-black mb-6">Cosmetic Dentistry</h2>
         <p className="text-black/80 leading-relaxed text-sm max-w-sm mx-auto">

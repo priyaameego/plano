@@ -1,11 +1,71 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+const painScale = [
+  { 
+    level: 1, label: 'No Pain', color: '#8dc63f', 
+    face: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
+        <path d="M8 9h.01M16 9h.01" />
+        <path d="M7 14a5 5 0 0 0 10 0" />
+      </svg>
+    )
+  },
+  { 
+    level: 2, label: 'Mild Pain', color: '#c4d82d', 
+    face: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
+        <path d="M8 9h.01M16 9h.01" />
+        <path d="M8 14.5a4 4 0 0 0 8 0" />
+      </svg>
+    )
+  },
+  { 
+    level: 3, label: 'Moderate Pain', color: '#fdb813', 
+    face: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
+        <path d="M8 9h.01M16 9h.01" />
+        <path d="M8 15h8" />
+      </svg>
+    )
+  },
+  { 
+    level: 4, label: 'Severe Pain', color: '#f37021', 
+    face: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
+        <path d="M8 10h.01M16 10h.01" />
+        <path d="M8 16a4 4 0 0 1 8 0" />
+      </svg>
+    )
+  },
+  { 
+    level: 5, label: 'Very Severe Pain', color: '#ec1c24', 
+    face: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
+        <path d="M7 9l2 1M17 9l-2 1" />
+        <path d="M8 12h.01M16 12h.01" />
+        <path d="M8 17a4 4 0 0 1 8 0" />
+      </svg>
+    )
+  },
+  { 
+    level: 6, label: 'Worst Pain Possible', color: '#c11126', 
+    face: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
+        <path d="M7 11s1-1 2-1M17 11s-1-1-2-1" />
+        <path d="M8 13l-1 2M16 13l1 2" />
+        <path d="M8 18a4 4 0 0 1 8 0" />
+      </svg>
+    )
+  }
+];
+
 export default function BookNow() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     patientType: 'new',
     appointmentType: '',
+    painLevel: 1,
     preferredDay: '',
     preferredTime: '',
     fullName: '',
@@ -23,20 +83,53 @@ export default function BookNow() {
 
   const appointmentTypes = [
     {
-      id: 'exam',
-      title: 'New Patient Exam & Cleaning',
-      desc: 'A complete dental exam and cleaning, including X-rays, oral cancer screening, iTero scan, at-home tips, a treatment plan & more.',
+      id: 'implants',
+      title: 'Dental Implants',
+      desc: 'Restore your smile and confidence with our permanent, natural-looking dental implants.',
+      icon: (
+        <svg className="w-12 h-12 text-blue-500 mb-4 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M5 13l4 4L19 7" />
+        </svg>
+      ),
+      bg: 'bg-blue-50'
+    },
+    {
+      id: 'surgery',
+      title: 'Navigated Surgery',
+      desc: 'Experience state-of-the-art precision with our advanced navigated dental surgery procedures.',
       icon: (
         <svg className="w-12 h-12 text-teal-500 mb-4 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
         </svg>
       ),
       bg: 'bg-teal-50'
     },
     {
-      id: 'emergency',
-      title: 'Dental Emergency',
-      desc: 'Are you experiencing redness, swelling, or severe pain? Our dedicated team is here for you.',
+      id: 'preventive',
+      title: 'Preventive Care',
+      desc: 'Keep your smile healthy with routine checkups, cleanings, and proactive dental care.',
+      icon: (
+        <svg className="w-12 h-12 text-green-500 mb-4 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      ),
+      bg: 'bg-green-50'
+    },
+    {
+      id: 'veneer',
+      title: 'Veneer',
+      desc: 'Enhance your teeth\'s appearance instantly with our custom-crafted porcelain veneers.',
+      icon: (
+        <svg className="w-12 h-12 text-purple-500 mb-4 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
+      bg: 'bg-purple-50'
+    },
+    {
+      id: 'root-canal',
+      title: 'Root Canal',
+      desc: 'Relieve pain and save your natural tooth with our gentle and effective root canal therapy.',
       icon: (
         <svg className="w-12 h-12 text-red-400 mb-4 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -45,37 +138,15 @@ export default function BookNow() {
       bg: 'bg-red-50'
     },
     {
-      id: 'consultation',
-      title: 'General Consultation',
-      desc: 'Consult our experienced dental team today for help with all of your oral health needs.',
+      id: 'extraction',
+      title: 'Extraction',
+      desc: 'Safe, comfortable, and professional tooth removal services when necessary.',
       icon: (
-        <svg className="w-12 h-12 text-slate-500 mb-4 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+        <svg className="w-12 h-12 text-orange-500 mb-4 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M6 18L18 6M6 6l12 12" />
         </svg>
       ),
-      bg: 'bg-slate-100'
-    },
-    {
-      id: 'invisalign',
-      title: 'Invisalign Consultation',
-      desc: 'Want a straighter smile, but don\'t want the hassle of braces? Invisalign could be right for you. Let us help you decide your next steps.',
-      icon: (
-        <svg className="w-12 h-12 text-blue-400 mb-4 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      ),
-      bg: 'bg-blue-50'
-    },
-    {
-      id: 'dentures',
-      title: 'Dentures Consultation',
-      desc: 'Are you unhappy with the appearance of your smile? Find out if you are a good candidate for dentures.',
-      icon: (
-        <svg className="w-12 h-12 text-purple-400 mb-4 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      ),
-      bg: 'bg-purple-50'
+      bg: 'bg-orange-50'
     }
   ];
 
@@ -186,31 +257,96 @@ export default function BookNow() {
                       {appointmentTypes.map(type => (
                         <label 
                           key={type.id} 
-                          className={`border rounded-xl p-8 cursor-pointer transition-all duration-300 flex flex-col items-center text-center shadow-sm hover:shadow-md ${
+                          className={`group border rounded-2xl p-8 cursor-pointer transition-all duration-500 ease-out flex flex-col items-center text-center shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] hover:-translate-y-2 ${
                             formData.appointmentType === type.id 
-                              ? 'border-[#8a3324] ring-1 ring-[#8a3324] bg-red-50/30' 
+                              ? 'border-[#8a3324] ring-1 ring-[#8a3324] bg-red-50/20' 
                               : 'border-slate-200 bg-white hover:border-slate-300'
                           }`}
                         >
                           <input type="radio" name="appointmentType" value={type.id} checked={formData.appointmentType === type.id} onChange={handleChange} className="hidden" />
-                          <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 ${type.bg}`}>
+                          <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-5 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 ${type.bg}`}>
                             {type.icon}
                           </div>
-                          <span className="font-bold text-slate-800 text-lg mb-2">{type.title}</span>
-                          <span className="text-sm text-slate-500 leading-relaxed">{type.desc}</span>
+                          <span className="font-bold text-slate-800 text-lg mb-2 transition-colors duration-300 group-hover:text-black">{type.title}</span>
+                          <span className="text-sm text-slate-500 leading-relaxed transition-colors duration-300 group-hover:text-slate-600">{type.desc}</span>
                         </label>
                       ))}
                     </div>
                   </div>
 
-                  <div className="mt-12 flex justify-end">
+                  {formData.appointmentType !== '' && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="mt-16 bg-white pt-8 border-t border-slate-100"
+                    >
+                      <h2 className="text-3xl font-serif font-bold text-slate-800 mb-10 text-center">Please Rate Your Pain</h2>
+                      
+                      <div className="relative w-full overflow-x-auto pb-6 hide-scrollbar">
+                        <div className="min-w-[600px] flex justify-between relative px-4 md:px-8 pt-8 md:pt-10">
+                           {/* The Continuous Line */}
+                           <div className="absolute top-[108px] md:top-[144px] left-[8%] right-[8%] h-2 bg-gradient-to-r from-[#8dc63f] via-[#fdb813] to-[#c11126] z-0"></div>
+                           
+                           {painScale.map(item => (
+                              <div 
+                                key={item.level} 
+                                className="flex flex-col items-center relative z-10 w-20 md:w-28 cursor-pointer group" 
+                                onClick={() => setFormData({...formData, painLevel: item.level})}
+                              >
+                                 {/* Face */}
+                                 <div 
+                                   className={`w-12 h-12 md:w-16 md:h-16 mb-4 md:mb-6 rounded-full border-[3px] bg-white flex items-center justify-center transition-all duration-300 ${
+                                     formData.painLevel === item.level ? 'scale-125 shadow-lg' : 'scale-100 opacity-70 group-hover:opacity-100 group-hover:scale-110'
+                                   }`} 
+                                   style={{ borderColor: item.color, color: item.color }}
+                                 >
+                                    {item.face}
+                                 </div>
+                                 
+                                 {/* Node on line */}
+                                 <div 
+                                   className={`w-6 h-6 md:w-8 md:h-8 rounded-full border-[4px] bg-white flex items-center justify-center transition-all duration-300 ${
+                                     formData.painLevel === item.level ? 'scale-125 shadow-md' : 'scale-100'
+                                   }`} 
+                                   style={{ borderColor: item.color }}
+                                 >
+                                   {formData.painLevel === item.level && (
+                                     <div className="w-2.5 h-2.5 md:w-3.5 md:h-3.5 rounded-full" style={{ backgroundColor: item.color }}></div>
+                                   )}
+                                 </div>
+                                 
+                                 {/* Label */}
+                                 <div className={`text-xs md:text-sm font-medium mt-6 text-center leading-tight transition-colors ${
+                                   formData.painLevel === item.level ? 'text-slate-900 font-bold' : 'text-slate-500 group-hover:text-slate-700'
+                                 }`}>
+                                   {item.label}
+                                 </div>
+                              </div>
+                           ))}
+                        </div>
+                      </div>
+
+                      <p className="text-center mt-12 text-slate-700 text-lg md:text-xl font-serif">
+                        If you are experiencing a dental or medical emergency, please dial <a href="tel:911" className="font-bold text-[#c11126] hover:underline">911</a>.
+                      </p>
+                    </motion.div>
+                  )}
+
+                  <div className="mt-12 flex justify-between items-center">
+                    <button 
+                      type="button" 
+                      onClick={() => window.history.back()}
+                      className="text-slate-500 font-semibold hover:text-slate-800 transition-colors px-4 py-2"
+                    >
+                      Back
+                    </button>
                     <button 
                       type="button" 
                       onClick={handleNext}
                       disabled={!formData.appointmentType}
                       className="bg-[#dfb15b] text-white font-bold py-3 px-10 rounded-md hover:bg-[#cda049] transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-md"
                     >
-                      Next Step
+                      Next: Select Time
                     </button>
                   </div>
                 </motion.div>
