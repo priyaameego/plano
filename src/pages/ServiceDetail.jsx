@@ -53,6 +53,7 @@ const serviceData = {
 
 const MapAndContactForm = () => {
   const [recaptchaState, setRecaptchaState] = useState('initial');
+  const [selectedService, setSelectedService] = useState('');
   
   const handleVerify = () => {
     if (recaptchaState === 'initial') {
@@ -61,10 +62,26 @@ const MapAndContactForm = () => {
     }
   };
 
+  const services = [
+    "Veneers",
+    "Root Canal",
+    "Extraction",
+    "Dental Implants",
+    "Invisalign",
+    "Preventive Care",
+    "Other"
+  ];
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto mt-12">
-      {/* Map */}
-      <div className="h-[400px] rounded-sm overflow-hidden flex flex-col justify-center">
+    <motion.div 
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto mt-20 mb-10 bg-white rounded-[2.5rem] p-8 md:p-12 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] border border-gray-100"
+    >
+      {/* Map Side */}
+      <div className="h-[500px] rounded-[1.5rem] overflow-hidden shadow-inner relative">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3345.549216743389!2d-96.7689883!3d33.0294235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c226049c93f9d%3A0x3f617dca4dac35b3!2sDental%20Place%20of%20Plano!5e0!3m2!1sen!2sus"
           width="100%"
@@ -73,84 +90,96 @@ const MapAndContactForm = () => {
           allowFullScreen=""
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
+          className="absolute inset-0"
         ></iframe>
       </div>
 
-      {/* Contact Form */}
-      <div>
-        {/* reCAPTCHA Mock */}
-        <div className="mb-6">
-          <div 
-            className="w-full max-w-[300px] bg-[#f9f9f9] border border-[#d3d3d3] rounded-sm p-4 flex items-center justify-between shadow-sm cursor-pointer hover:bg-gray-50 transition-colors"
-            onClick={handleVerify}
-          >
-            <div className="flex items-center gap-3">
-              {recaptchaState === 'initial' && (
-                <div className="w-7 h-7 rounded-sm border-2 border-[#c1c1c1] bg-white hover:border-[#a0a0a0] transition-colors"></div>
-              )}
-              {recaptchaState === 'verifying' && (
-                <div className="w-7 h-7 flex items-center justify-center">
-                  <svg className="w-6 h-6 text-blue-600 animate-spin" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                </div>
-              )}
-              {recaptchaState === 'success' && (
-                <div className="w-7 h-7 flex items-center justify-center">
-                  <svg className="w-8 h-8 text-green-600 drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-              )}
-              <span className="text-[#282828] text-[14px] font-medium ml-1">
-                I'm not a robot
-              </span>
-            </div>
-            
-            <div className="flex flex-col items-center justify-center">
-              <img 
-                src="https://www.gstatic.com/recaptcha/api2/logo_48.png" 
-                alt="reCAPTCHA" 
-                className="w-8 h-8 object-contain"
-              />
-              <div className="text-[10px] text-[#555] mt-1 font-sans">
-                reCAPTCHA
-              </div>
-              <div className="text-[8px] text-[#555] space-x-1 mt-0.5">
-                <span className="hover:underline">Privacy</span>
-                <span>-</span>
-                <span className="hover:underline">Terms</span>
-              </div>
+      {/* Contact Form Side */}
+      <div className="flex flex-col justify-center">
+        <h3 className="text-3xl font-serif font-bold text-gray-900 mb-2">
+          Request an Appointment
+        </h3>
+        <p className="text-gray-500 mb-8">
+          Fill out the form below and we'll get back to you shortly.
+        </p>
+
+        <form className="space-y-5">
+          <div className="relative">
+            <select 
+              value={selectedService}
+              onChange={(e) => setSelectedService(e.target.value)}
+              className="w-full px-6 py-4 rounded-2xl border-2 border-gray-100 focus:outline-none focus:border-[#dfb15b] bg-gray-50/50 text-gray-700 appearance-none shadow-sm transition-colors cursor-pointer font-medium"
+              required
+            >
+              <option value="" disabled>Select a Service (*)</option>
+              {services.map(s => (
+                <option key={s} value={s}>{s}</option>
+              ))}
+            </select>
+            <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+              <ChevronDown className="w-5 h-5" />
             </div>
           </div>
-        </div>
 
-        <form className="space-y-4">
-          <input 
-            type="text" 
-            placeholder="Your Name (*)" 
-            className="w-full px-6 py-4 rounded-full border-[1.5px] border-[#dfb15b] focus:outline-none focus:ring-1 focus:ring-[#dfb15b] bg-transparent text-gray-700"
-            required
-          />
-          <input 
-            type="email" 
-            placeholder="Your Email (*)" 
-            className="w-full px-6 py-4 rounded-full border-[1.5px] border-[#dfb15b] focus:outline-none focus:ring-1 focus:ring-[#dfb15b] bg-transparent text-gray-700"
-            required
-          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <input 
+              type="text" 
+              placeholder="Your Name (*)" 
+              className="w-full px-6 py-4 rounded-2xl border-2 border-gray-100 focus:outline-none focus:border-[#dfb15b] bg-gray-50/50 text-gray-700 shadow-sm transition-colors font-medium"
+              required
+            />
+            <input 
+              type="email" 
+              placeholder="Your Email (*)" 
+              className="w-full px-6 py-4 rounded-2xl border-2 border-gray-100 focus:outline-none focus:border-[#dfb15b] bg-gray-50/50 text-gray-700 shadow-sm transition-colors font-medium"
+              required
+            />
+          </div>
+          
           <textarea 
-            placeholder="Your Message" 
+            placeholder="Your Message (Optional)" 
             rows={4}
-            className="w-full px-6 py-4 rounded-3xl border-[1.5px] border-[#dfb15b] focus:outline-none focus:ring-1 focus:ring-[#dfb15b] bg-transparent text-gray-700 resize-none"
+            className="w-full px-6 py-4 rounded-2xl border-2 border-gray-100 focus:outline-none focus:border-[#dfb15b] bg-gray-50/50 text-gray-700 resize-none shadow-sm transition-colors font-medium"
           ></textarea>
+          
+          {/* reCAPTCHA Mock - Premium styling */}
+          <div className="mb-2">
+            <div 
+              className="inline-flex w-full md:w-auto bg-white border-2 border-gray-100 rounded-2xl p-4 items-center justify-between shadow-sm cursor-pointer hover:border-gray-200 transition-colors gap-6"
+              onClick={handleVerify}
+            >
+              <div className="flex items-center gap-4">
+                {recaptchaState === 'initial' && (
+                  <div className="w-6 h-6 rounded border-2 border-gray-300 hover:border-gray-400 transition-colors bg-gray-50"></div>
+                )}
+                {recaptchaState === 'verifying' && (
+                  <div className="w-6 h-6 flex items-center justify-center">
+                    <svg className="w-5 h-5 text-blue-500 animate-spin" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                  </div>
+                )}
+                {recaptchaState === 'success' && (
+                  <div className="w-6 h-6 flex items-center justify-center">
+                    <CheckCircle2 className="w-6 h-6 text-green-500" />
+                  </div>
+                )}
+                <span className="text-gray-600 font-medium text-sm">
+                  I'm not a robot
+                </span>
+              </div>
+              <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" alt="reCAPTCHA" className="w-6 h-6 object-contain opacity-60" />
+            </div>
+          </div>
           
           <button 
             type="button"
-            className="bg-[#dca843] hover:bg-[#c6963a] text-white text-lg font-medium py-3 px-8 rounded-full transition-colors inline-block mt-2"
+            className="w-full bg-[#111] hover:bg-[#dfb15b] text-white hover:text-black text-lg font-bold py-4 rounded-2xl transition-all duration-300 shadow-xl flex items-center justify-center gap-2 group mt-2"
           >
             Send Message
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
         </form>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -456,18 +485,70 @@ const DentalImplantsContent = () => {
 
 const ExtractionContent = () => {
   return (
-    <div className="container mx-auto px-6 max-w-6xl py-12 text-[#333333]">
-      <h2 className="text-[40px] font-bold font-sans text-center mb-8 text-[#333333]">Extraction</h2>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start mb-8 max-w-5xl mx-auto">
-        <div className="pt-4">
-          <p className="text-[15px] leading-8">
-            Tooth extraction is a surgical procedure to remove tooth from the gum socket. Teeth which are not in right position can cause pain and bacterial growth in spaces. Bacterial growth can cause frequent infections. Tooth extraction is performed to fix these problems.
+    <div className="container mx-auto px-6 max-w-6xl py-20 text-[#333333]">
+      <div className="text-center max-w-3xl mx-auto mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <span className="text-[#dfb15b] font-bold tracking-widest uppercase text-sm mb-4 block">Oral Surgery</span>
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6 leading-tight">
+            Tooth <span className="text-[#dfb15b]">Extraction</span>
+          </h2>
+          <p className="text-lg text-gray-600 leading-relaxed">
+            Tooth extraction is a surgical procedure to remove a tooth from its gum socket. Gentle extraction is sometimes necessary to protect your overall oral health and prevent further complications.
           </p>
-        </div>
-        <div className="flex justify-center md:justify-end">
-          <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800&auto=format&fit=crop" alt="Extraction" className="w-[300px] h-[400px] object-cover" />
-        </div>
+        </motion.div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+        <motion.div 
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="relative"
+        >
+          <div className="aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_-10px_rgba(0,0,0,0.15)] relative z-10 border border-gray-100 bg-white flex items-center justify-center p-4">
+            <img 
+              src="/extraction-1.png" 
+              alt="Tooth Extraction Procedure" 
+              className="w-full h-full object-contain"
+            />
+          </div>
+          <div className="absolute -top-10 -left-10 w-48 h-48 bg-[#dfb15b]/20 rounded-full blur-3xl -z-10"></div>
+        </motion.div>
+
+        <motion.div 
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <h3 className="text-3xl font-serif font-bold text-gray-900 mb-6">
+            Safe & Comfortable Care
+          </h3>
+          <p className="text-gray-600 leading-relaxed mb-6">
+            Teeth which are not in the right position can cause pain and bacterial growth in spaces. Bacterial growth can cause frequent infections. Tooth extraction is performed to fix these problems and restore oral health.
+          </p>
+          <ul className="space-y-4">
+            {[
+              "Painless procedure with modern anesthesia",
+              "Removes the primary source of infection",
+              "Prevents crowding (especially wisdom teeth)",
+              "Prepares your smile for orthodontics or implants"
+            ].map((benefit, i) => (
+              <li key={i} className="flex items-center gap-4 text-gray-800 font-medium">
+                <div className="w-8 h-8 rounded-full bg-[#dfb15b]/10 flex items-center justify-center flex-shrink-0">
+                  <Check className="w-5 h-5 text-[#dfb15b]" strokeWidth={3} />
+                </div>
+                {benefit}
+              </li>
+            ))}
+          </ul>
+        </motion.div>
       </div>
 
       <MapAndContactForm />
@@ -477,22 +558,71 @@ const ExtractionContent = () => {
 
 const RootCanalContent = () => {
   return (
-    <div className="container mx-auto px-6 max-w-6xl py-12 text-[#333333]">
-      <h2 className="text-[40px] font-bold font-sans text-center mb-16 text-[#333333]">Root Canal</h2>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-8 max-w-5xl mx-auto">
-        <div className="pt-4 pr-4">
-          <p className="text-[15px] leading-8 text-[#333333]">
-            Inflammation or infection in the root of tooth due to tooth decay can be treated by a procedure called root canal. In this procedure nerve and pulp inside the tooth are removed and tooth is sealed after cleaning. If this procedure is not performed on time it can result in severe pain and infection.
+    <div className="container mx-auto px-6 max-w-6xl py-20 text-[#333333]">
+      <div className="text-center max-w-3xl mx-auto mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <span className="text-[#dfb15b] font-bold tracking-widest uppercase text-sm mb-4 block">Endodontics</span>
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6 leading-tight">
+            Root Canal <span className="text-[#dfb15b]">Therapy</span>
+          </h2>
+          <p className="text-lg text-gray-600 leading-relaxed">
+            Inflammation or infection in the root of a tooth due to decay can be treated by a procedure called a root canal. If not performed on time, it can result in severe pain and infection.
           </p>
-        </div>
-        <div className="flex justify-center">
-          <img 
-            src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop" 
-            alt="Root Canal Procedure" 
-            className="w-full max-w-[400px] h-auto object-cover rounded-xl"
-          />
-        </div>
+        </motion.div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+        <motion.div 
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="relative order-2 lg:order-1"
+        >
+          <h3 className="text-3xl font-serif font-bold text-gray-900 mb-6">
+            Save Your Natural Tooth
+          </h3>
+          <p className="text-gray-600 leading-relaxed mb-6">
+            During this procedure, the infected nerve and pulp inside the tooth are carefully removed, and the tooth is thoroughly cleaned and sealed. Modern root canal therapy is highly successful and virtually painless.
+          </p>
+          <ul className="space-y-4">
+            {[
+              "Eliminates severe toothache pain",
+              "Saves your natural tooth from extraction",
+              "Prevents the spread of infection to other teeth",
+              "Restores normal biting and chewing force"
+            ].map((benefit, i) => (
+              <li key={i} className="flex items-center gap-4 text-gray-800 font-medium">
+                <div className="w-8 h-8 rounded-full bg-[#dfb15b]/10 flex items-center justify-center flex-shrink-0">
+                  <Check className="w-5 h-5 text-[#dfb15b]" strokeWidth={3} />
+                </div>
+                {benefit}
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+
+        <motion.div 
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="relative order-1 lg:order-2"
+        >
+          <div className="aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_-10px_rgba(0,0,0,0.15)] relative z-10 border border-gray-100">
+            <img 
+              src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2070&auto=format&fit=crop" 
+              alt="Root Canal Therapy" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-[#dfb15b]/20 rounded-full blur-3xl -z-10"></div>
+        </motion.div>
       </div>
 
       <MapAndContactForm />
@@ -502,22 +632,71 @@ const RootCanalContent = () => {
 
 const VeneerContent = () => {
   return (
-    <div className="container mx-auto px-6 max-w-6xl py-12 text-[#333333]">
-      <h2 className="text-[40px] font-bold font-sans text-center mb-16 text-[#333333]">Veneer</h2>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start mb-8 max-w-5xl mx-auto">
-        <div className="pt-4 pr-4">
-          <p className="text-[15px] leading-8 text-[#333333]">
-            A veneer is thin shell of tooth that is cemented over the surface of tooth which is chipped, cracked or uneven. Veneer helps to improve aesthetics and give you a beautiful smile.
+    <div className="container mx-auto px-6 max-w-6xl py-20 text-[#333333]">
+      <div className="text-center max-w-3xl mx-auto mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <span className="text-[#dfb15b] font-bold tracking-widest uppercase text-sm mb-4 block">Cosmetic Dentistry</span>
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6 leading-tight">
+            Porcelain <span className="text-[#dfb15b]">Veneers</span>
+          </h2>
+          <p className="text-lg text-gray-600 leading-relaxed">
+            A veneer is a thin shell of porcelain that is cemented over the surface of a tooth which is chipped, cracked or uneven. Veneers help to improve aesthetics and give you a beautiful, flawless smile.
           </p>
-        </div>
-        <div className="flex justify-center">
-          <img 
-            src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800&auto=format&fit=crop" 
-            alt="Veneer Procedure" 
-            className="w-full max-w-[400px] h-[200px] object-cover"
-          />
-        </div>
+        </motion.div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+        <motion.div 
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="relative order-2 lg:order-1"
+        >
+          <h3 className="text-3xl font-serif font-bold text-gray-900 mb-6">
+            Transform Your Smile
+          </h3>
+          <p className="text-gray-600 leading-relaxed mb-6">
+            Custom-made to match the natural color and shape of your teeth, porcelain veneers offer a long-lasting solution for various cosmetic dental concerns. They are highly stain-resistant and provide a natural-looking enhancement.
+          </p>
+          <ul className="space-y-4">
+            {[
+              "Fixes chipped, broken, or worn teeth",
+              "Covers severe discoloration or staining",
+              "Closes gaps between teeth seamlessly",
+              "Creates a perfectly aligned, even smile"
+            ].map((benefit, i) => (
+              <li key={i} className="flex items-center gap-4 text-gray-800 font-medium">
+                <div className="w-8 h-8 rounded-full bg-[#dfb15b]/10 flex items-center justify-center flex-shrink-0">
+                  <Check className="w-5 h-5 text-[#dfb15b]" strokeWidth={3} />
+                </div>
+                {benefit}
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+
+        <motion.div 
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="relative order-1 lg:order-2"
+        >
+          <div className="aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_-10px_rgba(0,0,0,0.15)] relative z-10 border border-gray-100">
+            <img 
+              src="https://images.unsplash.com/photo-1590650153855-d9e808231d41?q=80&w=2070&auto=format&fit=crop" 
+              alt="Beautiful smile with veneers" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-[#dfb15b]/20 rounded-full blur-3xl -z-10"></div>
+        </motion.div>
       </div>
 
       <MapAndContactForm />

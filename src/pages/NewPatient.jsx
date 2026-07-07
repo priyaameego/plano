@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { FileText, Clock, Smile, CheckCircle, ArrowRight, Calendar } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function NewPatient() {
   return (
@@ -69,40 +70,38 @@ export default function NewPatient() {
         </div>
       </div>
 
-      {/* CTA Section */}
-      <section className="relative py-24 md:py-32 flex items-center justify-center overflow-hidden bg-[#1a1a1a]">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=2070&auto=format&fit=crop" 
-            alt="Dental office" 
-            className="w-full h-full object-cover opacity-30"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
-        </div>
-        
-        <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl">
+      {/* Premium CTA Box Section */}
+      <section className="py-20 mb-10 px-6">
+        <div className="container mx-auto max-w-5xl">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="bg-white rounded-[3rem] p-12 md:p-16 text-center shadow-[0_15px_40px_-15px_rgba(0,0,0,0.08)] border border-gray-100 relative overflow-hidden group hover:shadow-[0_20px_50px_-10px_rgba(0,0,0,0.12)] transition-shadow duration-500"
           >
-            <span className="text-[#dfb15b] font-bold tracking-wider uppercase text-sm mb-4 block">Take The First Step</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-              Ready for Your New Smile?
-            </h2>
-            <p className="text-gray-300 text-lg mb-10 max-w-2xl mx-auto">
-              Schedule your consultation today and experience the difference of premium, personalized dental care. Our team is ready to welcome you.
-            </p>
+            {/* Decorative blurs */}
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#dfb15b]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 group-hover:bg-[#dfb15b]/10 transition-colors duration-500"></div>
+            <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-500/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3 group-hover:bg-blue-500/10 transition-colors duration-500"></div>
             
-            <a 
-              href="/book-now" 
-              className="inline-flex items-center justify-center gap-2 bg-[#dfb15b] text-black font-bold text-lg px-8 py-4 rounded-full hover:bg-white hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(223,177,91,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]"
-            >
-              <Calendar className="w-5 h-5" />
-              Book Your Appointment
-              <ArrowRight className="w-5 h-5 ml-1" />
-            </a>
+            <div className="relative z-10 max-w-2xl mx-auto">
+              <span className="text-[#dfb15b] font-bold tracking-widest uppercase text-sm mb-4 block">Take The First Step</span>
+              <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6 leading-tight">
+                Ready for Your New Smile?
+              </h2>
+              <p className="text-lg text-gray-600 mb-10 leading-relaxed">
+                Schedule your consultation today and experience the difference of premium, personalized dental care. Our team is ready to welcome you.
+              </p>
+              
+              <Link 
+                to="/book-now" 
+                className="inline-flex items-center justify-center gap-3 bg-[#111] hover:bg-[#dfb15b] text-white hover:text-black font-bold text-lg px-10 py-5 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl group/btn"
+              >
+                <Calendar className="w-5 h-5" />
+                Book Now
+                <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>

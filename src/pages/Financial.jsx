@@ -39,22 +39,11 @@ export default function Financial() {
             We know that your insurance benefits are valuable to you, so we will work with you to help maximize your benefits. We accept most major PPO dental insurances and we are in-network with many common plans.
           </p>
 
-          <div className="relative flex items-center">
-            <button className="absolute -left-4 md:-left-8 z-10 text-gray-500 hover:text-black transition-colors">
-              <ChevronLeft className="w-8 h-8" strokeWidth={1.5} />
-            </button>
-            
-            <div className="w-full flex flex-wrap md:flex-nowrap items-center justify-between px-6 md:px-4 gap-8">
-              <img src="/logos/aetna.png" alt="Aetna" className="h-9 w-auto object-contain" />
-              <img src="/logos/metlife.png" alt="MetLife" className="h-10 w-auto object-contain" />
-              <img src="/logos/cigna.png" alt="Cigna" className="h-12 w-auto object-contain" />
-              <img src="/logos/bcbs.png" alt="BlueCross BlueShield" className="h-14 w-auto object-contain" />
-              <img src="/logos/delta.png" alt="Delta Dental" className="h-10 w-auto object-contain" />
-            </div>
-
-            <button className="absolute -right-4 md:-right-8 z-10 text-gray-500 hover:text-black transition-colors">
-              <ChevronRight className="w-8 h-8" strokeWidth={1.5} />
-            </button>
+          <div className="w-full flex overflow-x-auto md:overflow-visible items-center md:justify-center gap-14 md:gap-20 px-4 py-4 snap-x snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            <img src="https://dentalplaceofplano.com/wp-content/uploads/2021/02/bcbs.png" alt="BlueCross BlueShield" className="h-10 md:h-14 w-auto object-contain mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-300 shrink-0 snap-center" />
+            <img src="https://dentalplaceofplano.com/wp-content/uploads/2021/02/aetna-1-1.jpg" alt="Aetna" className="h-9 md:h-12 w-auto object-contain mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-300 shrink-0 snap-center" />
+            <img src="https://dentalplaceofplano.com/wp-content/uploads/2021/02/cigna-1.jpg" alt="Cigna" className="h-10 md:h-14 w-auto object-contain mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-300 shrink-0 snap-center" />
+            <img src="https://dentalplaceofplano.com/wp-content/uploads/2021/02/MetLife.png" alt="MetLife" className="h-7 md:h-10 w-auto object-contain mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-300 shrink-0 snap-center" />
           </div>
         </div>
 
