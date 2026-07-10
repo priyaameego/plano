@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, CheckCircle2, Check, ChevronDown, Star, Sparkles, Smile, CalendarDays } from 'lucide-react';
 import dentalImg from '../assets/dental.jpg';
 import invImg from '../assets/inv.jpg';
+import xxxImg from '../assets/xxx.png';
 
 
 const serviceData = {
@@ -616,11 +617,11 @@ const RootCanalContent = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative order-1 lg:order-2"
         >
-          <div className="aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_-10px_rgba(0,0,0,0.15)] relative z-10 border border-gray-100">
+          <div className="aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_-10px_rgba(0,0,0,0.15)] relative z-10 border border-gray-100 bg-white p-8">
             <img 
-              src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2070&auto=format&fit=crop" 
+              src="https://dentalplaceofplano.com/wp-content/uploads/2021/08/tooth-removebg-preview-600x392.png" 
               alt="Root Canal Therapy" 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
             />
           </div>
           <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-[#dfb15b]/20 rounded-full blur-3xl -z-10"></div>
@@ -690,11 +691,11 @@ const VeneerContent = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative order-1 lg:order-2"
         >
-          <div className="aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_-10px_rgba(0,0,0,0.15)] relative z-10 border border-gray-100">
+          <div className="aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_-10px_rgba(0,0,0,0.15)] relative z-10 border border-gray-100 bg-white p-8">
             <img 
-              src="https://images.unsplash.com/photo-1590650153855-d9e808231d41?q=80&w=2070&auto=format&fit=crop" 
+              src="https://dentalplaceofplano.com/wp-content/uploads/2021/08/teeth.png" 
               alt="Beautiful smile with veneers" 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
             />
           </div>
           <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-[#dfb15b]/20 rounded-full blur-3xl -z-10"></div>
@@ -825,12 +826,11 @@ const NavigatedSurgeryContent = () => {
           transition={{ duration: 0.8 }}
           className="relative"
         >
-          <div className="aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_-10px_rgba(0,0,0,0.15)] relative z-10 border border-gray-100">
-            {/* High Quality Medical Machine Placeholder */}
+          <div className="aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_-10px_rgba(0,0,0,0.15)] relative z-10 border border-gray-100 bg-white p-8">
             <img 
-              src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop" 
+              src={xxxImg} 
               alt="X-Guide Machine Technology" 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
             />
           </div>
           {/* Decorative blur */}
@@ -962,16 +962,6 @@ const InvisalignContent = () => {
           {/* Decorative Elements */}
           <div className="absolute -bottom-8 -right-8 w-40 h-40 bg-[#dfb15b]/20 rounded-full blur-3xl -z-10"></div>
           <div className="absolute top-10 -left-10 w-24 h-24 bg-blue-500/10 rounded-full blur-2xl -z-10"></div>
-          
-          <div className="absolute bottom-10 -left-10 bg-white p-6 rounded-3xl shadow-[0_20px_50px_-10px_rgba(0,0,0,0.1)] z-20 flex items-center gap-4">
-            <div className="w-14 h-14 bg-gradient-to-br from-[#dfb15b] to-[#cda049] rounded-2xl flex items-center justify-center">
-              <Star className="w-7 h-7 text-white fill-white" />
-            </div>
-            <div>
-              <p className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Credentials</p>
-              <p className="font-serif font-bold text-xl text-gray-900 leading-none">Platinum Provider</p>
-            </div>
-          </div>
         </div>
         
         <div className="lg:col-span-7">
