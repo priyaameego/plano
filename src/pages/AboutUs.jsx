@@ -3,7 +3,6 @@ import AboutPractice from '../components/AboutPractice';
 import AboutDoctors from '../components/AboutDoctors';
 import AboutStaff from '../components/AboutStaff';
 import OfficeGallery from '../components/OfficeGallery';
-import CTA from '../components/CTA';
 
 export default function AboutUs() {
   return (
@@ -13,7 +12,6 @@ export default function AboutUs() {
       <AboutDoctors />
       <AboutStaff />
       <OfficeGallery />
-      <CTA />
     </main>
   );
 }

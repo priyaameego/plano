@@ -2,20 +2,22 @@ import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, CheckCircle2, Check, ChevronDown, Star, Sparkles, Smile, CalendarDays } from 'lucide-react';
-import CTA from '../components/CTA';
+import dentalImg from '../assets/dental.jpg';
+import invImg from '../assets/inv.jpg';
+
 
 const serviceData = {
   'dental-implants': {
     title: 'Dental Implants',
     description: 'Dental implants have become the preferred method of tooth replacement for several important reasons. They offer a permanent, natural-looking solution that restores both function and aesthetics.',
-    image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=2070&auto=format&fit=crop',
+    image: dentalImg,
     benefits: ['Permanent tooth replacement', 'Prevents bone loss', 'Looks and feels natural', 'No slipping or clicking']
   },
   'invisalign': {
     title: 'Invisalign',
     heading: 'Invisalign Clear Aligners',
     description: 'Invisalign is the clear alternative to braces. Dr. Jumas is a certified Invisalign provider who designs customized treatment plans to give you a straighter, healthier smile.',
-    image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2070&auto=format&fit=crop',
+    image: invImg,
     benefits: ['Smooth & comfortable aligners', 'Virtually invisible', 'Fewer office visits', 'Better oral hygiene', 'Customized treatment plan']
   },
   'navigated-surgery': {

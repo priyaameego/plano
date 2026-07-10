@@ -24,52 +24,52 @@ export default function AboutPractice() {
               Our friendly and experienced team is here to ensure that every visit is comfortable, effective, and tailored to your unique needs.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
-              <div className="flex items-start gap-4">
-                <div className="bg-white p-3 rounded-xl shadow-sm">
-                  <Users className="w-6 h-6 text-[#d9af3f]" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+              <div className="flex items-start gap-2">
+                <div className="bg-white p-1.5 rounded shadow-sm shrink-0">
+                  <Users className="w-4 h-4 text-[#d9af3f]" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-800">Experienced Team</h4>
-                  <p className="text-sm text-gray-500 mt-1">Friendly, professional, and dedicated care.</p>
+                  <h4 className="font-medium text-gray-800 text-xs">Experienced Team</h4>
+                  <p className="text-[10px] text-gray-500 mt-0.5">Friendly, professional, and dedicated care.</p>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
-                <div className="bg-white p-3 rounded-xl shadow-sm">
-                  <Heart className="w-6 h-6 text-[#d9af3f]" />
+              <div className="flex items-start gap-2">
+                <div className="bg-white p-1.5 rounded shadow-sm shrink-0">
+                  <Heart className="w-4 h-4 text-[#d9af3f]" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-800">Patient-Focused</h4>
-                  <p className="text-sm text-gray-500 mt-1">Personalized treatments for your smile.</p>
+                  <h4 className="font-medium text-gray-800 text-xs">Patient-Focused</h4>
+                  <p className="text-[10px] text-gray-500 mt-0.5">Personalized treatments for your smile.</p>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
-                <div className="bg-white p-3 rounded-xl shadow-sm">
-                  <Clock className="w-6 h-6 text-[#d9af3f]" />
+              <div className="flex items-start gap-2">
+                <div className="bg-white p-1.5 rounded shadow-sm shrink-0">
+                  <Clock className="w-4 h-4 text-[#d9af3f]" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-800">Flexible Scheduling</h4>
-                  <p className="text-sm text-gray-500 mt-1">Appointments that fit your lifestyle.</p>
+                  <h4 className="font-medium text-gray-800 text-xs">Flexible Scheduling</h4>
+                  <p className="text-[10px] text-gray-500 mt-0.5">Appointments that fit your lifestyle.</p>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
-                <div className="bg-white p-3 rounded-xl shadow-sm">
-                  <DollarSign className="w-6 h-6 text-[#d9af3f]" />
+              <div className="flex items-start gap-2">
+                <div className="bg-white p-1.5 rounded shadow-sm shrink-0">
+                  <DollarSign className="w-4 h-4 text-[#d9af3f]" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-800">Affordable Options</h4>
-                  <p className="text-sm text-gray-500 mt-1">Flexible financial plans available.</p>
+                  <h4 className="font-medium text-gray-800 text-xs">Affordable Options</h4>
+                  <p className="text-[10px] text-gray-500 mt-0.5">Flexible financial plans available.</p>
                 </div>
               </div>
             </div>
             
             {/* Communities Served */}
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 transition-all hover:shadow-md">
-              <div className="flex items-center gap-3 mb-3">
-                <MapPin className="w-5 h-5 text-[#8a3324]" />
-                <h4 className="font-bold text-gray-800 text-lg">Communities We Serve</h4>
+            <div className="bg-white p-4 rounded-xl shadow-sm border border-slate-100 transition-all hover:shadow-md">
+              <div className="flex items-center gap-2 mb-2">
+                <MapPin className="w-4 h-4 text-[#8a3324]" />
+                <h4 className="font-semibold text-gray-800 text-sm">Communities We Serve</h4>
               </div>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed text-xs">
                 Plano, Dallas, Frisco, McKinney, Allen, Richardson, Murphy, Carrollton, and surrounding areas.
               </p>
             </div>
@@ -89,31 +89,6 @@ export default function AboutPractice() {
                 alt="Modern Dental Technology" 
                 className="w-full h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
-              
-              {/* Technology Overlay */}
-              <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="bg-[#dfb15b]/20 p-3 rounded-full backdrop-blur-sm">
-                    <Cpu className="w-6 h-6 text-[#dfb15b]" />
-                  </div>
-                  <h3 className="text-2xl md:text-3xl font-serif text-white font-bold">Advanced Technology</h3>
-                </div>
-                <ul className="space-y-4">
-                  <li className="flex items-center gap-4 text-white/95 bg-black/20 p-3 rounded-lg backdrop-blur-sm">
-                    <CheckCircle2 className="w-6 h-6 text-[#dfb15b] shrink-0" />
-                    <span className="font-medium text-lg">Digital Impressions</span>
-                  </li>
-                  <li className="flex items-center gap-4 text-white/95 bg-black/20 p-3 rounded-lg backdrop-blur-sm">
-                    <CheckCircle2 className="w-6 h-6 text-[#dfb15b] shrink-0" />
-                    <span className="font-medium text-lg">Digital Radiography</span>
-                  </li>
-                  <li className="flex items-center gap-4 text-white/95 bg-black/20 p-3 rounded-lg backdrop-blur-sm">
-                    <CheckCircle2 className="w-6 h-6 text-[#dfb15b] shrink-0" />
-                    <span className="font-medium text-lg">3D Cone Beam CT Imaging</span>
-                  </li>
-                </ul>
-              </div>
             </div>
             
             {/* Decorative Element */}

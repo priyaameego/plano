@@ -31,33 +31,7 @@ export default function AboutDoctors() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
             </div>
             
-            {/* Achievement Cards Float */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-              className="absolute -bottom-8 -right-8 lg:-right-12 bg-white p-6 rounded-2xl shadow-[0_15px_40px_-15px_rgba(0,0,0,0.2)] max-w-[280px] border border-slate-50 z-10 hidden md:block"
-            >
-              <div className="flex items-center gap-4 mb-4 pb-4 border-b border-slate-100">
-                <div className="bg-[#dfb15b]/10 p-3 rounded-full shrink-0">
-                  <Star className="w-6 h-6 text-[#dfb15b]" />
-                </div>
-                <div>
-                  <p className="text-sm font-bold text-gray-800 leading-tight">Platinum Invisalign Provider</p>
-                  <p className="text-xs text-gray-500 mt-1">2024</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="bg-[#dfb15b]/10 p-3 rounded-full shrink-0">
-                  <Award className="w-6 h-6 text-[#dfb15b]" />
-                </div>
-                <div>
-                  <p className="text-sm font-bold text-gray-800 leading-tight">ICOI Member</p>
-                  <p className="text-xs text-gray-500 mt-1">International Congress of Oral Implantologists</p>
-                </div>
-              </div>
-            </motion.div>
+
           </motion.div>
 
           <motion.div 

@@ -1,4 +1,5 @@
 import { Crown } from 'lucide-react';
+import dentalImg from '../assets/dental.jpg';
 
 export default function ImplantCosmeticSection() {
   return (
@@ -16,7 +17,7 @@ export default function ImplantCosmeticSection() {
       {/* Center Image */}
       <div 
         className="w-full h-80 md:h-auto bg-cover bg-center"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1974&auto=format&fit=crop')" }}
+        style={{ backgroundImage: `url(${dentalImg})` }}
       ></div>
       
       {/* Right Content */}

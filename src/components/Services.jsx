@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
+import dentalImg from '../assets/dental.jpg';
+import invImg from '../assets/inv.jpg';
 
 const services = [
   {
@@ -10,12 +12,12 @@ const services = [
   {
     title: "Dental Implants",
     desc: "Permanent, natural-looking replacements for missing teeth using titanium posts.",
-    img: "https://images.unsplash.com/photo-1598256989800-fea5ce5146f2?q=80&w=2074&auto=format&fit=crop"
+    img: dentalImg
   },
   {
     title: "Invisalign Clear Aligners",
     desc: "Straighten your teeth discreetly without traditional metal braces.",
-    img: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2070&auto=format&fit=crop"
+    img: invImg
   },
   {
     title: "Teeth Whitening",

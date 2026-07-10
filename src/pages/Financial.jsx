@@ -24,8 +24,8 @@ export default function Financial() {
             
             <div className="md:w-5/12">
               <img 
-                src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop" 
-                alt="Patient and Dentist" 
+                src="https://dentalplaceofplano.com/wp-content/uploads/2020/05/emergency.jpg" 
+                alt="Emergency Dental" 
                 className="w-full h-auto object-cover"
               />
             </div>
@@ -44,6 +44,7 @@ export default function Financial() {
             <img src="https://dentalplaceofplano.com/wp-content/uploads/2021/02/aetna-1-1.jpg" alt="Aetna" className="h-9 md:h-12 w-auto object-contain mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-300 shrink-0 snap-center" />
             <img src="https://dentalplaceofplano.com/wp-content/uploads/2021/02/cigna-1.jpg" alt="Cigna" className="h-10 md:h-14 w-auto object-contain mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-300 shrink-0 snap-center" />
             <img src="https://dentalplaceofplano.com/wp-content/uploads/2021/02/MetLife.png" alt="MetLife" className="h-7 md:h-10 w-auto object-contain mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-300 shrink-0 snap-center" />
+            <img src="https://dentalplaceofplano.com/wp-content/uploads/2021/02/delta-1-1.jpg" alt="Delta Dental" className="h-10 md:h-14 w-auto object-contain mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-300 shrink-0 snap-center" />
           </div>
         </div>
 

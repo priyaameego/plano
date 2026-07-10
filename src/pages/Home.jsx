@@ -2,7 +2,6 @@ import Hero from '../components/Hero';
 import WhoWeAre from '../components/WhoWeAre';
 import HomeStatsAndSkills from '../components/HomeStatsAndSkills';
 import InsuranceMarquee from '../components/InsuranceMarquee';
-import CTA from '../components/CTA';
 import { motion } from 'framer-motion';
 import OrthodonticsSection from '../components/OrthodonticsSection';
 import ImplantCosmeticSection from '../components/ImplantCosmeticSection';
@@ -50,7 +49,6 @@ export default function Home() {
       <OrthodonticsSection />
       <ImplantCosmeticSection />
       <HomeStatsAndSkills />
-      <CTA />
     </main>
   );
 }
