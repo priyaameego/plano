@@ -1212,10 +1212,7 @@ export default function ServiceDetail() {
         </section>
       )}
 
-      {/* Bottom Section */}
-      {!['extraction', 'root-canal', 'veneer', 'preventive-care', 'invisalign', 'navigated-surgery'].includes(serviceId) && (
-        <CTA />
-      )}
+
     </main>
   );
 }

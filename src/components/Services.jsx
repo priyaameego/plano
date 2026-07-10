@@ -1,35 +1,42 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import dentalImg from '../assets/dental.jpg';
 import invImg from '../assets/inv.jpg';
 
 const services = [
   {
+    id: "cosmetic-dentistry",
     title: "Cosmetic Dentistry",
     desc: "Transform your smile with premium veneers, bonding, and total smile makeovers.",
     img: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=2070&auto=format&fit=crop"
   },
   {
+    id: "dental-implants",
     title: "Dental Implants",
     desc: "Permanent, natural-looking replacements for missing teeth using titanium posts.",
     img: dentalImg
   },
   {
+    id: "invisalign",
     title: "Invisalign Clear Aligners",
     desc: "Straighten your teeth discreetly without traditional metal braces.",
     img: invImg
   },
   {
+    id: "teeth-whitening",
     title: "Teeth Whitening",
     desc: "Professional laser whitening treatments for a instantly brighter, radiant smile.",
     img: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=2070&auto=format&fit=crop"
   },
   {
+    id: "preventive-care",
     title: "General Dentistry",
     desc: "Comprehensive checkups, cleanings, and preventive care for long-lasting oral health.",
     img: "https://images.unsplash.com/photo-1598256989800-fea5ce5146f2?q=80&w=2074&auto=format&fit=crop"
   },
   {
+    id: "porcelain-crowns",
     title: "Porcelain Crowns",
     desc: "Restore damaged teeth with durable, tooth-colored ceramic crowns.",
     img: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2070&auto=format&fit=crop"
@@ -85,19 +92,22 @@ export default function Services() {
                 className="w-full h-[450px] object-cover transition-transform duration-1000 group-hover:scale-110"
               />
               
+              <Link to={`/services/${service.id}`} className="absolute inset-0 z-30" />
               <div className="absolute inset-0 z-20 p-8 flex flex-col justify-end bg-gradient-to-t from-black via-black/80 to-transparent opacity-90 transition-opacity duration-300">
                 <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                  <h3 className="text-2xl font-semibold mb-3 text-white group-hover:text-[#dfb15b] transition-colors duration-300">
-                    {service.title}
+                  <h3 className="text-2xl font-semibold mb-3 text-white group-hover:text-[#dfb15b] transition-colors duration-300 relative z-40">
+                    <Link to={`/services/${service.id}`}>{service.title}</Link>
                   </h3>
-                  <div className="h-0 opacity-0 group-hover:h-auto group-hover:opacity-100 transition-all duration-500 overflow-hidden">
+                  <div className="h-0 opacity-0 group-hover:h-auto group-hover:opacity-100 transition-all duration-500 overflow-hidden relative z-40">
                     <p className="text-gray-300 mb-6 leading-relaxed">
                       {service.desc}
                     </p>
                   </div>
-                  <div className="flex items-center gap-2 text-[#dfb15b] font-semibold text-sm uppercase tracking-wider group-hover:gap-4 transition-all duration-300">
-                    <span>Read More</span>
-                    <ArrowRight className="w-4 h-4" />
+                  <div className="flex items-center gap-2 text-[#dfb15b] font-semibold text-sm uppercase tracking-wider group-hover:gap-4 transition-all duration-300 relative z-40">
+                    <Link to={`/services/${service.id}`} className="flex items-center gap-2 group-hover:gap-4">
+                      <span>Read More</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
                   </div>
                 </div>
               </div>
