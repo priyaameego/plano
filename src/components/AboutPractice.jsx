@@ -85,8 +85,8 @@ export default function AboutPractice() {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-[0_20px_50px_-12px_rgba(0,0,0,0.2)] group">
               <img 
-                src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1974&auto=format&fit=crop" 
-                alt="Modern Dental Technology" 
+                src="/dr-juma.png" 
+                alt="Dr. Daniel Juma" 
                 className="w-full h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>

@@ -10,8 +10,8 @@ export default function AboutHero() {
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
           transition={{ duration: 1.5, ease: 'easeOut' }}
-          src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2070&auto=format&fit=crop" 
-          alt="Premium Dental Clinic Interior" 
+          src="/orthodontics.png" 
+          alt="Dental Place of Plano Practice" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/65"></div>

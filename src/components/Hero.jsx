@@ -3,9 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const sliderImages = [
-  'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop', // Smiling woman
-  'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2070&auto=format&fit=crop', // Happy patient
-  'https://images.unsplash.com/photo-1590611936760-eeb9bc500b67?q=80&w=2070&auto=format&fit=crop'  // Dentist and patient
+  '/veneers-1.png',
+  '/dental-implant.png',
+  '/orthodontics.png'
 ];
 
 export default function Hero() {
@@ -28,12 +28,12 @@ export default function Hero() {
         <AnimatePresence mode="wait">
           <motion.div
             key={currentImage}
-            initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, scale: 1 }}
+            animate={{ opacity: 1, scale: 1.1 }}
             exit={{ opacity: 0 }}
             transition={{ 
-              opacity: { duration: 1.2, ease: "easeInOut" },
-              scale: { duration: 6, ease: "easeOut" }
+              opacity: { duration: 1.5, ease: "easeInOut" },
+              scale: { duration: 8, ease: "linear" }
             }}
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url('${sliderImages[currentImage]}')` }}
