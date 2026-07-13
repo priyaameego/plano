@@ -87,66 +87,78 @@ export default function BookNow() {
       title: 'Dental Implants',
       desc: 'Restore your smile and confidence with our permanent, natural-looking dental implants.',
       icon: (
-        <svg className="w-12 h-12 text-blue-500 mb-4 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-8 h-8 md:w-10 md:h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M5 13l4 4L19 7" />
         </svg>
       ),
-      bg: 'bg-blue-50'
+      bg: 'bg-blue-50',
+      activeBg: 'bg-blue-400',
+      iconColor: 'text-blue-500'
     },
     {
       id: 'surgery',
       title: 'Navigated Surgery',
       desc: 'Experience state-of-the-art precision with our advanced navigated dental surgery procedures.',
       icon: (
-        <svg className="w-12 h-12 text-teal-500 mb-4 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-8 h-8 md:w-10 md:h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
         </svg>
       ),
-      bg: 'bg-teal-50'
+      bg: 'bg-teal-50',
+      activeBg: 'bg-teal-400',
+      iconColor: 'text-teal-500'
     },
     {
       id: 'preventive',
       title: 'Preventive Care',
       desc: 'Keep your smile healthy with routine checkups, cleanings, and proactive dental care.',
       icon: (
-        <svg className="w-12 h-12 text-green-500 mb-4 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-8 h-8 md:w-10 md:h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
         </svg>
       ),
-      bg: 'bg-green-50'
+      bg: 'bg-green-50',
+      activeBg: 'bg-green-400',
+      iconColor: 'text-green-500'
     },
     {
       id: 'veneer',
       title: 'Veneer',
       desc: 'Enhance your teeth\'s appearance instantly with our custom-crafted porcelain veneers.',
       icon: (
-        <svg className="w-12 h-12 text-purple-500 mb-4 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-8 h-8 md:w-10 md:h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
-      bg: 'bg-purple-50'
+      bg: 'bg-purple-50',
+      activeBg: 'bg-purple-400',
+      iconColor: 'text-purple-500'
     },
     {
       id: 'root-canal',
       title: 'Root Canal',
       desc: 'Relieve pain and save your natural tooth with our gentle and effective root canal therapy.',
       icon: (
-        <svg className="w-12 h-12 text-red-400 mb-4 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-8 h-8 md:w-10 md:h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
         </svg>
       ),
-      bg: 'bg-red-50'
+      bg: 'bg-red-50',
+      activeBg: 'bg-red-400',
+      iconColor: 'text-red-400'
     },
     {
       id: 'extraction',
       title: 'Extraction',
       desc: 'Safe, comfortable, and professional tooth removal services when necessary.',
       icon: (
-        <svg className="w-12 h-12 text-orange-500 mb-4 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-8 h-8 md:w-10 md:h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M6 18L18 6M6 6l12 12" />
         </svg>
       ),
-      bg: 'bg-orange-50'
+      bg: 'bg-orange-50',
+      activeBg: 'bg-orange-400',
+      iconColor: 'text-orange-500'
     }
   ];
 
@@ -254,29 +266,32 @@ export default function BookNow() {
                     <h2 className="text-xl md:text-3xl font-serif text-slate-800 mb-6 md:mb-8 text-center md:text-left">Select your appointment type</h2>
                     
                     <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
-                      {appointmentTypes.map(type => (
-                        <label 
-                          key={type.id} 
-                          className={`group border rounded-xl md:rounded-2xl p-4 md:p-8 cursor-pointer transition-all duration-500 ease-out flex flex-col items-center text-center shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] hover:-translate-y-1 md:hover:-translate-y-2 ${
-                            formData.appointmentType === type.id 
-                              ? 'border-[#8a3324] ring-1 ring-[#8a3324] bg-red-50/20' 
-                              : 'border-slate-200 bg-white hover:border-slate-300'
-                          }`}
-                        >
-                          <input type="radio" name="appointmentType" value={type.id} checked={formData.appointmentType === type.id} onChange={handleChange} className="hidden" />
-                          <div className={`w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center mb-3 md:mb-5 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 ${type.bg}`}>
-                            <div className="scale-75 md:scale-100 flex items-center justify-center -mt-2 md:mt-0">
-                              {type.icon}
+                      {appointmentTypes.map(type => {
+                        const isActive = formData.appointmentType === type.id;
+                        return (
+                          <label 
+                            key={type.id} 
+                            className={`group border rounded-xl md:rounded-2xl p-4 md:p-8 cursor-pointer transition-all duration-500 ease-out flex flex-col items-center text-center shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] hover:-translate-y-1 md:hover:-translate-y-2 ${
+                              isActive 
+                                ? `${type.activeBg} border-transparent ring-0` 
+                                : 'border-slate-200 bg-white hover:border-slate-300'
+                            }`}
+                          >
+                            <input type="radio" name="appointmentType" value={type.id} checked={isActive} onChange={handleChange} className="hidden" />
+                            <div className={`w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center mb-3 md:mb-5 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 ${isActive ? 'bg-black text-white' : `${type.bg} ${type.iconColor}`}`}>
+                              <div className="scale-75 md:scale-100 flex items-center justify-center -mt-2 md:mt-0">
+                                {type.icon}
+                              </div>
                             </div>
-                          </div>
-                          <span className="font-bold text-slate-800 text-sm md:text-lg mb-1 md:mb-2 transition-colors duration-300 group-hover:text-black">{type.title}</span>
-                          <span className="text-[10px] md:text-sm text-slate-500 leading-relaxed transition-colors duration-300 group-hover:text-slate-600 line-clamp-3 md:line-clamp-none">{type.desc}</span>
-                        </label>
-                      ))}
+                            <span className={`font-bold text-sm md:text-lg mb-1 md:mb-2 transition-colors duration-300 ${isActive ? 'text-black' : 'text-slate-800 group-hover:text-black'}`}>{type.title}</span>
+                            <span className={`text-[10px] md:text-sm leading-relaxed transition-colors duration-300 line-clamp-3 md:line-clamp-none ${isActive ? 'text-black' : 'text-slate-500 group-hover:text-slate-600'}`}>{type.desc}</span>
+                          </label>
+                        );
+                      })}
                     </div>
                   </div>
 
-                  {formData.appointmentType !== '' && (
+                  {['surgery', 'root-canal', 'extraction'].includes(formData.appointmentType) && (
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
