@@ -78,7 +78,7 @@ export default function NewPatient() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-[3rem] p-12 md:p-16 text-center shadow-[0_15px_40px_-15px_rgba(0,0,0,0.08)] border border-gray-100 relative overflow-hidden group hover:shadow-[0_20px_50px_-10px_rgba(0,0,0,0.12)] transition-shadow duration-500"
+            className="bg-white rounded-[3rem] p-8 md:p-16 text-center shadow-[0_15px_40px_-15px_rgba(0,0,0,0.08)] border border-gray-100 relative overflow-hidden group hover:shadow-[0_20px_50px_-10px_rgba(0,0,0,0.12)] transition-shadow duration-500"
           >
             {/* Decorative blurs */}
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#dfb15b]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 group-hover:bg-[#dfb15b]/10 transition-colors duration-500"></div>
