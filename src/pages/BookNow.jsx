@@ -218,9 +218,9 @@ export default function BookNow() {
                 >
                   
                   {/* Toggle: New vs Returning */}
-                  <div className="flex justify-center mb-16 mt-8">
-                    <fieldset className="border border-slate-300 rounded-xl p-2 pb-0 pt-6 relative inline-block bg-slate-50 shadow-sm">
-                      <legend className="text-lg md:text-xl font-serif font-bold text-slate-800 px-4 text-center absolute -top-4 left-1/2 -translate-x-1/2 bg-white w-max">Are you a new or returning patient?</legend>
+                  <div className="flex justify-center mb-10 md:mb-16 mt-8 w-full px-2 md:px-0">
+                    <fieldset className="border border-slate-300 rounded-xl p-2 pb-0 pt-6 md:pt-6 relative w-full md:w-auto bg-slate-50 shadow-sm">
+                      <legend className="text-xs sm:text-sm md:text-xl font-serif font-bold text-slate-800 px-2 md:px-4 text-center absolute -top-3 md:-top-4 left-1/2 -translate-x-1/2 bg-white w-[90%] md:w-max whitespace-normal md:whitespace-nowrap">Are you a new or returning patient?</legend>
                       <div className="flex relative mt-4 md:mt-2 mb-2 p-1 bg-gray-200 rounded-lg overflow-hidden flex-col md:flex-row">
                         <div 
                           className="hidden md:block absolute top-1 bottom-1 w-[calc(50%-4px)] bg-gray-300 rounded-md transition-transform duration-300 ease-in-out z-0"
@@ -250,25 +250,27 @@ export default function BookNow() {
                     </fieldset>
                   </div>
 
-                  <div>
-                    <h2 className="text-2xl md:text-3xl font-serif text-slate-800 mb-8">Select your appointment type</h2>
+                  <div className="px-2 md:px-0">
+                    <h2 className="text-xl md:text-3xl font-serif text-slate-800 mb-6 md:mb-8 text-center md:text-left">Select your appointment type</h2>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
                       {appointmentTypes.map(type => (
                         <label 
                           key={type.id} 
-                          className={`group border rounded-2xl p-8 cursor-pointer transition-all duration-500 ease-out flex flex-col items-center text-center shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] hover:-translate-y-2 ${
+                          className={`group border rounded-xl md:rounded-2xl p-4 md:p-8 cursor-pointer transition-all duration-500 ease-out flex flex-col items-center text-center shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] hover:-translate-y-1 md:hover:-translate-y-2 ${
                             formData.appointmentType === type.id 
                               ? 'border-[#8a3324] ring-1 ring-[#8a3324] bg-red-50/20' 
                               : 'border-slate-200 bg-white hover:border-slate-300'
                           }`}
                         >
                           <input type="radio" name="appointmentType" value={type.id} checked={formData.appointmentType === type.id} onChange={handleChange} className="hidden" />
-                          <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-5 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 ${type.bg}`}>
-                            {type.icon}
+                          <div className={`w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center mb-3 md:mb-5 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 ${type.bg}`}>
+                            <div className="scale-75 md:scale-100 flex items-center justify-center -mt-2 md:mt-0">
+                              {type.icon}
+                            </div>
                           </div>
-                          <span className="font-bold text-slate-800 text-lg mb-2 transition-colors duration-300 group-hover:text-black">{type.title}</span>
-                          <span className="text-sm text-slate-500 leading-relaxed transition-colors duration-300 group-hover:text-slate-600">{type.desc}</span>
+                          <span className="font-bold text-slate-800 text-sm md:text-lg mb-1 md:mb-2 transition-colors duration-300 group-hover:text-black">{type.title}</span>
+                          <span className="text-[10px] md:text-sm text-slate-500 leading-relaxed transition-colors duration-300 group-hover:text-slate-600 line-clamp-3 md:line-clamp-none">{type.desc}</span>
                         </label>
                       ))}
                     </div>
@@ -278,9 +280,9 @@ export default function BookNow() {
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="mt-16 bg-white pt-8 border-t border-slate-100"
+                      className="mt-10 md:mt-16 bg-white pt-8 border-t border-slate-100"
                     >
-                      <h2 className="text-3xl font-serif font-bold text-slate-800 mb-10 text-center">Please Rate Your Pain</h2>
+                      <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-800 mb-8 md:mb-10 text-center">Please Rate Your Pain</h2>
                       
                       <div className="relative w-full overflow-x-auto pb-6 hide-scrollbar">
                         <div className="min-w-[600px] flex justify-between relative px-4 md:px-8 pt-8 md:pt-10">

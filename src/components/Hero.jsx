@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const sliderImages = [
   'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop', // Smiling woman
@@ -10,15 +11,18 @@ const sliderImages = [
 export default function Hero() {
   const [currentImage, setCurrentImage] = useState(0);
 
+  const nextSlide = () => setCurrentImage((prev) => (prev + 1) % sliderImages.length);
+  const prevSlide = () => setCurrentImage((prev) => (prev - 1 + sliderImages.length) % sliderImages.length);
+
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % sliderImages.length);
+      nextSlide();
     }, 5000);
     return () => clearInterval(timer);
   }, []);
 
   return (
-    <section className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-[75vh] flex items-center justify-center overflow-hidden">
       {/* Background Image Slider */}
       <div className="absolute inset-0 z-0 bg-[#0a0a0a]">
         <AnimatePresence mode="wait">
@@ -39,6 +43,22 @@ export default function Hero() {
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
       </div>
+
+      {/* Slider Navigation Arrows */}
+      <button 
+        onClick={prevSlide}
+        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full bg-black/20 hover:bg-black/60 text-white backdrop-blur-sm transition-all border border-white/10 hover:scale-110"
+        aria-label="Previous slide"
+      >
+        <ChevronLeft className="w-6 h-6 md:w-8 md:h-8" />
+      </button>
+      <button 
+        onClick={nextSlide}
+        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full bg-black/20 hover:bg-black/60 text-white backdrop-blur-sm transition-all border border-white/10 hover:scale-110"
+        aria-label="Next slide"
+      >
+        <ChevronRight className="w-6 h-6 md:w-8 md:h-8" />
+      </button>
 
       <div className="container mx-auto px-6 relative z-10 flex flex-col items-center text-center mt-12 md:mt-0">
         
