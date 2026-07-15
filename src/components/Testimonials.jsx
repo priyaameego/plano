@@ -11,7 +11,7 @@ export default function Testimonials() {
         </div>
 
         <div className="max-w-6xl mx-auto">
-          <div className="elfsight-app-e95d64c9-ced6-4941-84ba-78178aaec14a" data-elfsight-app-lazy></div>
+          <div className="elfsight-app-e95d64c9-ced6-4941-84ba-78178aaec14a"></div>
         </div>
       </div>
     </section>

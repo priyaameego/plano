@@ -16,63 +16,21 @@ export default function AboutPractice() {
           >
             <span className="text-[#dfb15b] font-bold tracking-widest uppercase text-sm mb-3 block">Welcome to Dental Place of Plano</span>
             <h2 className="text-4xl md:text-5xl font-serif text-gray-900 mb-8 leading-tight">
-              A Family-Owned Practice Focused on You
+              About Our Practice
             </h2>
             
-            <p className="text-gray-600 text-lg leading-relaxed mb-8">
-              Led by Dr. Daniel Juma and Dr. Stephanie Lobo, our practice is dedicated to providing personalized, patient-focused care in a welcoming environment. 
-              Our friendly and experienced team is here to ensure that every visit is comfortable, effective, and tailored to your unique needs.
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
-              <div className="flex items-start gap-2">
-                <div className="bg-white p-1.5 rounded shadow-sm shrink-0">
-                  <Users className="w-4 h-4 text-[#d9af3f]" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-gray-800 text-xs">Experienced Team</h4>
-                  <p className="text-[10px] text-gray-500 mt-0.5">Friendly, professional, and dedicated care.</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-2">
-                <div className="bg-white p-1.5 rounded shadow-sm shrink-0">
-                  <Heart className="w-4 h-4 text-[#d9af3f]" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-gray-800 text-xs">Patient-Focused</h4>
-                  <p className="text-[10px] text-gray-500 mt-0.5">Personalized treatments for your smile.</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-2">
-                <div className="bg-white p-1.5 rounded shadow-sm shrink-0">
-                  <Clock className="w-4 h-4 text-[#d9af3f]" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-gray-800 text-xs">Flexible Scheduling</h4>
-                  <p className="text-[10px] text-gray-500 mt-0.5">Appointments that fit your lifestyle.</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-2">
-                <div className="bg-white p-1.5 rounded shadow-sm shrink-0">
-                  <DollarSign className="w-4 h-4 text-[#d9af3f]" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-gray-800 text-xs">Affordable Options</h4>
-                  <p className="text-[10px] text-gray-500 mt-0.5">Flexible financial plans available.</p>
-                </div>
-              </div>
-            </div>
-            
-            {/* Communities Served */}
-            <div className="bg-white p-4 rounded-xl shadow-sm border border-slate-100 transition-all hover:shadow-md">
-              <div className="flex items-center gap-2 mb-2">
-                <MapPin className="w-4 h-4 text-[#8a3324]" />
-                <h4 className="font-semibold text-gray-800 text-sm">Communities We Serve</h4>
-              </div>
-              <p className="text-gray-600 leading-relaxed text-xs">
-                Plano, Dallas, Frisco, McKinney, Allen, Richardson, Murphy, Carrollton, and surrounding areas.
+            <div className="text-gray-600 text-[15px] leading-relaxed space-y-6 mb-8">
+              <p>
+                Dental Place of Plano is a family-owned and operated dental practice led by Dr. Daniel Juma and Dr. Stephanie Lobo. Supported by a skilled, friendly, and experienced team, we are committed to delivering high-quality personalized care in a welcoming environment. Our doctors take the time to get to know each patient, carefully address concerns, and develop treatment plans tailored to individual needs. We believe in building lasting relationships and serving as trusted partners to achieve optimal oral health and confident smiles.
+              </p>
+              <p>
+                Our goal is to provide an exceptional patient experience through flexible scheduling, affordable financial options, and advanced treatment solutions. Using the latest dental technology, we deliver comprehensive, comfortable care for patients of all ages while creating healthy, beautiful smiles that last.
+              </p>
+              <p>
+                Conveniently located at the intersection of Park Boulevard and Coit Road, Dental Place of Plano serves patients from Plano, Dallas, Frisco, McKinney, Allen, Richardson, Murphy, Carrollton, and surrounding communities. Our modern office is equipped with state-of-the-art imaging, monitoring, and surgical technology designed to maximize patient comfort and safety. We utilize advanced tools such as digital impressions, digital radiography, and 3D Cone Beam CT imaging. Our technology provides detailed three-dimensional views of the teeth, jaws, and surrounding structures, allowing Dr. Juma and Dr. Lobo to diagnose conditions more accurately and plan treatments with greater precision than traditional dental X-rays alone.
               </p>
             </div>
+            
           </motion.div>
 
           {/* Right Column - Image & Tech */}
@@ -83,10 +41,10 @@ export default function AboutPractice() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative rounded-3xl overflow-hidden shadow-[0_20px_50px_-12px_rgba(0,0,0,0.2)] group">
+            <div className="relative rounded-3xl overflow-hidden shadow-[0_20px_50px_-12px_rgba(0,0,0,0.2)] group bg-slate-200">
               <img 
-                src="/dr-juma.png" 
-                alt="Dr. Daniel Juma" 
+                src="https://dentalplaceofplano.com/wp-content/uploads/2024/09/99e85c5d46192b185a2eb6c6ddf7522a5db91414.jpg" 
+                alt="Dental Place of Plano Team" 
                 className="w-full h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, CheckCircle2, Check, ChevronDown, Star, Sparkles, Smile, CalendarDays } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Check, ChevronDown, Star, Sparkles, Smile, CalendarDays, Shield, ShieldCheck, Droplets, Activity, Moon, Apple, Search, BookOpen } from 'lucide-react';
 import dentalImg from '../assets/dental.jpg';
 import invImg from '../assets/inv.jpg';
 import xxxImg from '../assets/xxx.png';
@@ -708,86 +708,101 @@ const VeneerContent = () => {
 };
 
 const PreventiveCareContent = () => {
+  const services = [
+    {
+      title: "Athletic Mouth Guards",
+      desc: "A mouth guard can protect your mouth during any athletic and recreational activities. A good fitting mouth guard can be especially important if you wear braces or have bridgework.",
+      icon: Shield
+    },
+    {
+      title: "Deep Cleaning (Scaling and Root Planing)",
+      desc: "Scaling and Root Debridement is a gum therapy used to treat Periodontitis (Gum disease). It involves the removal or eliminating of dental plaque, bacterial toxins and calculus which are a cause of the inflammation in the disease process. The therapy helps to re-establish a healthy environment, that is in remission of periodontal disease.",
+      icon: Sparkles
+    },
+    {
+      title: "Dental Sealants",
+      desc: "Dental sealants act as a barrier to prevent cavities. Sealants are usually applied to the chewing surfaces of the back teeth.",
+      icon: ShieldCheck
+    },
+    {
+      title: "Fluoride Treatment",
+      desc: "During a fluoride treatment, your dentist will fill a mouth guard with flavored fluoride. The mouth guard will be worn for up to four minutes in order for it to be effective. Fluoride, a naturally-occurring mineral, helps prevent cavities in children and adults by making the outer surface of your teeth (enamel) more resistant to the acid attacks that cause tooth decay.",
+      icon: Droplets
+    },
+    {
+      title: "Laser Assisted Periodontal Therapy",
+      desc: "Laser Assisted Periodontal treatment is a gentle, conservative, non-invasive method of treating gum disease without cutting, suturing or removing tissue that allows for the effective treatment of periodontal disease with no removal of tissue.",
+      icon: Activity
+    },
+    {
+      title: "Night Guards",
+      desc: "If you have noticed wear and tear on your teeth, are experiencing any symptoms that you suspect might be from grinding your teeth, you may need a night guard.",
+      icon: Moon
+    },
+    {
+      title: "Nutritional Counseling",
+      desc: "Did you know that eating patterns and food choices play an important role in preventing tooth decay and gum disease, too? We can help you make healthy choices.",
+      icon: Apple
+    },
+    {
+      title: "Oral Cancer Screening",
+      desc: "The goal of oral cancer screening is early detection of potential pathology that may be indicative of risks for malignancies. At Dental place of Plano, innovative technologies like Velscope in addition to thorough intra-oral and extra-oral exams are used to help in assessing abnormalities and evaluating dysplastic tissue that may at times offer critical information to aid in early treatment.",
+      icon: Search
+    },
+    {
+      title: "Oral Hygiene Instruction",
+      desc: "Oral hygiene can quickly become overwhelming. At Dental Place of Plano, we want to make the process as clear as possible.",
+      icon: BookOpen
+    },
+    {
+      title: "Preventive Teeth Cleaning",
+      desc: "During a dental cleaning you will receive a thorough cleaning on your teeth and gums. Prevention and detection is the key to early discovery of gum disease.",
+      icon: Smile
+    }
+  ];
+
   return (
-    <div className="container mx-auto px-6 max-w-6xl py-12 text-[#333333]">
-      <h2 className="text-[40px] font-bold font-sans text-center mb-12 text-[#333333]">Preventive Care</h2>
-
-      <div className="max-w-5xl mx-auto mb-16">
-        <p className="text-[18px] font-bold leading-relaxed mb-12 text-[#333333]">
+    <div className="container mx-auto px-6 max-w-7xl py-24 text-[#333333]">
+      <div className="text-center max-w-3xl mx-auto mb-20">
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-4xl md:text-5xl font-bold font-sans mb-6 text-[#333333]"
+        >
+          Preventive Care
+        </motion.h2>
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="text-lg text-gray-600 leading-relaxed"
+        >
           Dental Place of Plano offers a multitude of cleaning and preventative dental options. We believe a customized experience is very important to the health of your smile!
-        </p>
+        </motion.p>
+      </div>
 
-        <div className="space-y-10">
-          <div>
-            <h3 className="text-[16px] font-bold uppercase tracking-wider mb-3">Athletic Mouth Guards</h3>
-            <p className="text-[15px] leading-8 text-[#555]">
-              A mouth guard can protect your mouth during any athletic and recreational activities. A good fitting mouth guard can be especially important if you wear braces or have bridgework.
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+        {services.map((service, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1, duration: 0.5 }}
+            whileHover={{ y: -5 }}
+            className="bg-white rounded-2xl p-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 hover:shadow-[0_20px_40px_rgba(223,177,91,0.15)] transition-all duration-300 group flex flex-col"
+          >
+            <div className="w-14 h-14 bg-gray-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#dfb15b] transition-colors duration-300">
+              <service.icon className="w-7 h-7 text-[#dfb15b] group-hover:text-white transition-colors duration-300" />
+            </div>
+            <h3 className="text-xl font-bold mb-4 text-[#333333] group-hover:text-[#dfb15b] transition-colors duration-300">{service.title}</h3>
+            <p className="text-gray-500 leading-relaxed flex-grow">
+              {service.desc}
             </p>
-          </div>
-
-          <div>
-            <h3 className="text-[16px] font-bold uppercase tracking-wider mb-3">Deep Cleaning (Scaling and Root Planing)</h3>
-            <p className="text-[15px] leading-8 text-[#555]">
-              Scaling and Root Debridement is a gum therapy used to treat Periodontitis (Gum disease). It involves the removal or eliminating of dental plaque, bacterial toxins and calculus which are a cause of the inflammation in the disease process. The therapy helps to re-establish a healthy environment, that is in remission of periodontal disease.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-[16px] font-bold uppercase tracking-wider mb-3">Dental Sealants</h3>
-            <p className="text-[15px] leading-8 text-[#555]">
-              Dental sealants act as a barrier to prevent cavities. Sealants are usually applied to the chewing surfaces of the back teeth.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-[16px] font-bold uppercase tracking-wider mb-3">Fluoride Treatment</h3>
-            <p className="text-[15px] leading-8 text-[#555]">
-              During a fluoride treatment, your dentist will fill a mouth guard with flavored fluoride. The mouth guard will be worn for up to four minutes in order for it to be effective. Fluoride, a naturally-occurring mineral, helps prevent cavities in children and adults by making the outer surface of your teeth (enamel) more resistant to the acid attacks that cause tooth decay.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-[16px] font-bold uppercase tracking-wider mb-3">Laser Assisted Periodontal Therapy</h3>
-            <p className="text-[15px] leading-8 text-[#555]">
-              Laser Assisted Periodontal treatment is a gentle, conservative, non-invasive method of treating gum disease without cutting, suturing or removing tissue that allows for the effective treatment of periodontal disease with no removal of tissue.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-[16px] font-bold uppercase tracking-wider mb-3">Night Guards</h3>
-            <p className="text-[15px] leading-8 text-[#555]">
-              If you have noticed wear and tear on your teeth, are experiencing any symptoms that you suspect might be from grinding your teeth, you may need a night guard.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-[16px] font-bold uppercase tracking-wider mb-3">Nutritional Counseling</h3>
-            <p className="text-[15px] leading-8 text-[#555]">
-              Did you know that eating patterns and food choices play an important role in preventing tooth decay and gum disease, too? We can help you make healthy choices.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-[16px] font-bold uppercase tracking-wider mb-3">Oral Cancer Screening</h3>
-            <p className="text-[15px] leading-8 text-[#555]">
-              The goal of oral cancer screening is early detection of potential pathology that may be indicative of risks for malignancies. At Dental place of Plano, innovative technologies like Velscope in addition to thorough inrea-oral and extra-oral exams are used to help in assessing abnormalities and evaluating dysplastic tissue that may at times offer critical information to aid in early treatment.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-[16px] font-bold uppercase tracking-wider mb-3">Oral Hygiene Instruction</h3>
-            <p className="text-[15px] leading-8 text-[#555]">
-              Oral hygiene can quickly become overwhelming. At Dental Place of Plano, we want to make the process as clear as possible.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-[16px] font-bold uppercase tracking-wider mb-3">Preventive Teeth Cleaning</h3>
-            <p className="text-[15px] leading-8 text-[#555]">
-              During a dental cleaning you will receive a thorough cleaning on your teeth and gums. Prevention and detection is the key to early discovery of gum disease.
-            </p>
-          </div>
-        </div>
+          </motion.div>
+        ))}
       </div>
 
       <PreventiveContactForm />
