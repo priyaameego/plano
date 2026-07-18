@@ -21,7 +21,7 @@ export default function PatientEducation() {
     {
       title: 'Preventing Gum Disease',
       desc: 'Learn the early signs of gingivitis and how to protect your gums for a lifetime of health.',
-      thumbnail: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?q=80&w=800&auto=format&fit=crop',
+      thumbnail: '/family_smile.png',
       videoUrl: 'https://www.youtube.com/embed/qPFUSrio-tc'
     },
     {
@@ -31,10 +31,10 @@ export default function PatientEducation() {
       videoUrl: 'https://www.youtube.com/embed/6UZdC-Rb294'
     },
     {
-      title: 'Professional Teeth Whitening',
-      desc: 'Discover how professional teeth whitening can safely and effectively brighten your smile.',
-      thumbnail: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop',
-      videoUrl: 'https://www.youtube.com/embed/fHXOPun1cOs'
+      title: 'How to Brush Properly',
+      desc: 'Master the technique of brushing to ensure you are thoroughly removing plaque every day.',
+      thumbnail: '/smiling_brush.png',
+      videoUrl: 'https://www.youtube.com/embed/wzVXI_2YykA'
     },
     {
       title: 'Cosmetic Dentistry Options',
