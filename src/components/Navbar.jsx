@@ -61,7 +61,7 @@ export default function Navbar() {
             </a>
             <span className="hidden md:flex items-center gap-1.5">
               <Clock className="w-4 h-4" />
-              Mon-Sat: 9am - 6pm
+              Mon-Friday: 9:00 am - 5:00 pm
             </span>
           </div>
           <div className="flex items-center gap-4">

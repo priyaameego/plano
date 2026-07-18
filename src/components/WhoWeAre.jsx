@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 const services = [
   { id: 'dental-implants', title: 'Dental Implants', image: '/dental-implant.png' },
   { id: 'navigated-surgery', title: 'Navigated Surgery', image: '/navigated-surgery.jpg' },
-  { id: 'preventive-care', title: 'Preventive Care', image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2000' },
+  { id: 'preventive-care', title: 'Preventive Care', image: '/smiling_woman.png' },
   { id: 'veneer', title: 'Veneers', image: '/veneers-1.png' },
   { id: 'root-canal', title: 'Root Canal', image: '/root-canal.png' },
   { id: 'extraction', title: 'Extraction', image: '/extraction-1.png' }

@@ -6,8 +6,6 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 const officeImages = [
-  'https://dentalplaceofplano.com/wp-content/uploads/2024/09/fc29dadd22f977807f3bfdbb7d060930aac076da.jpg',
-  'https://dentalplaceofplano.com/wp-content/uploads/2024/09/ec04464250ed701fb2e4564614d01c8b4345356d.jpg',
   'https://dentalplaceofplano.com/wp-content/uploads/2024/09/e459ff3b0da2f28ec4e6abcdb5d1d14cee3e2854-1.jpg',
   'https://dentalplaceofplano.com/wp-content/uploads/2024/09/e3fe5fc5ba3f5f1d6b858bdde7e34b4e909c6a8f-1.jpg',
   'https://dentalplaceofplano.com/wp-content/uploads/2024/09/99e85c5d46192b185a2eb6c6ddf7522a5db91414.jpg',

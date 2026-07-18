@@ -46,6 +46,10 @@ export default function Financial() {
             <img src="https://dentalplaceofplano.com/wp-content/uploads/2021/02/MetLife.png" alt="MetLife" className="h-7 md:h-10 w-auto object-contain mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-300 shrink-0 snap-center" />
             <img src="https://dentalplaceofplano.com/wp-content/uploads/2021/02/delta-1-1.jpg" alt="Delta Dental" className="h-10 md:h-14 w-auto object-contain mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-300 shrink-0 snap-center" />
           </div>
+
+          <p className="text-[15px] leading-8 mt-12 text-[#555555]">
+            We are also an Out-of-Network provider and are happy to help patients maximize their insurance benefits. Our team will assist with claims and help you understand your coverage whenever possible.
+          </p>
         </div>
 
       </div>

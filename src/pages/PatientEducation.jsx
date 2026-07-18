@@ -31,15 +31,15 @@ export default function PatientEducation() {
       videoUrl: 'https://www.youtube.com/embed/6UZdC-Rb294'
     },
     {
-      title: 'How to Brush Properly',
-      desc: 'Master the technique of brushing to ensure you are thoroughly removing plaque every day.',
-      thumbnail: 'https://images.unsplash.com/photo-1522844990619-4951c40f7eda?q=80&w=800&auto=format&fit=crop',
-      videoUrl: 'https://www.youtube.com/embed/G4tYzj4UdGI'
+      title: 'Professional Teeth Whitening',
+      desc: 'Discover how professional teeth whitening can safely and effectively brighten your smile.',
+      thumbnail: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop',
+      videoUrl: 'https://www.youtube.com/embed/fHXOPun1cOs'
     },
     {
       title: 'Cosmetic Dentistry Options',
       desc: 'Explore the different ways we can enhance your smile with veneers, whitening, and more.',
-      thumbnail: 'https://images.unsplash.com/photo-1590650153855-d9e808231d41?q=80&w=800&auto=format&fit=crop',
+      thumbnail: '/smiling_family.png',
       videoUrl: 'https://www.youtube.com/embed/fHXOPun1cOs'
     }
   ];

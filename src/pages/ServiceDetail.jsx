@@ -31,7 +31,7 @@ const serviceData = {
   'preventive-care': {
     title: 'Preventive Care',
     description: 'The foundation of a healthy smile starts with preventive care. Regular checkups, professional cleanings, and oral cancer screenings help catch problems before they start.',
-    image: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?q=80&w=2070&auto=format&fit=crop',
+    image: '/preventive_hero.png',
     benefits: ['Thorough cleanings', 'Early decay detection', 'Oral cancer screening', 'Gum disease prevention']
   },
   'veneer': {
