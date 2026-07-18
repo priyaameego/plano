@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import familyImg from '../assets/family.png';
 
 const services = [
   {
@@ -14,7 +15,7 @@ const services = [
   {
     name: 'Preventive Care',
     link: '/preventive-care',
-    image: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?q=80&w=800&auto=format&fit=crop'
+    image: familyImg
   },
   {
     name: 'Veneer',

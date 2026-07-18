@@ -5,6 +5,7 @@ import { ArrowRight, CheckCircle2, Check, ChevronDown, Star, Sparkles, Smile, Ca
 import dentalImg from '../assets/dental.jpg';
 import invImg from '../assets/inv.jpg';
 import xxxImg from '../assets/xxx.png';
+import familyImg from '../assets/family.png';
 
 
 const serviceData = {
@@ -31,7 +32,7 @@ const serviceData = {
   'preventive-care': {
     title: 'Preventive Care',
     description: 'The foundation of a healthy smile starts with preventive care. Regular checkups, professional cleanings, and oral cancer screenings help catch problems before they start.',
-    image: '/preventive_hero.png',
+    image: familyImg,
     benefits: ['Thorough cleanings', 'Early decay detection', 'Oral cancer screening', 'Gum disease prevention']
   },
   'veneer': {
@@ -1119,7 +1120,7 @@ export default function ServiceDetail() {
           <img 
             src={service.image} 
             alt={service.title} 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-top"
           />
           <div className="absolute inset-0 bg-black/60"></div>
         </div>
