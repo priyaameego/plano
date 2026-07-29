@@ -1117,12 +1117,16 @@ export default function ServiceDetail() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-[40vh] min-h-[400px] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
+      <section className="relative h-[40vh] min-h-[400px] flex items-center justify-center overflow-hidden bg-white">
+        <div className="absolute inset-0 z-0 flex items-center justify-center">
           <img 
             src={service.image} 
             alt={service.title} 
-            className="w-full h-full object-cover object-top"
+            className={`w-full h-full ${
+              (serviceId === 'extraction' || serviceId === 'dental-implants' || serviceId === 'invisalign')
+                ? 'object-cover object-center'
+                : 'object-cover object-top'
+            }`}
           />
           <div className="absolute inset-0 bg-black/60"></div>
         </div>
