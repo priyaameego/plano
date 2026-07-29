@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import familyImg from '../assets/family.png';
+import toothImg from '../assets/tooth.png';
 
 const services = [
   {
@@ -30,7 +31,7 @@ const services = [
   {
     name: 'Extraction',
     link: '/extraction',
-    image: 'https://images.unsplash.com/photo-1598256989800-fea5ce5146f2?q=80&w=800&auto=format&fit=crop'
+    image: toothImg
   }
 ];
 

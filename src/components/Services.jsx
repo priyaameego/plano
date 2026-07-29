@@ -3,6 +3,7 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import dentalImg from '../assets/dental.jpg';
 import invImg from '../assets/inv.jpg';
+import dentImg from '../assets/dent.png';
 
 const services = [
   {
@@ -15,7 +16,7 @@ const services = [
     id: "dental-implants",
     title: "Dental Implants",
     desc: "Permanent, natural-looking replacements for missing teeth using titanium posts.",
-    img: dentalImg
+    img: dentImg
   },
   {
     id: "invisalign",

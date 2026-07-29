@@ -50,11 +50,7 @@ export default function Footer() {
                 <span className="text-white">9:00 am - 5:00 pm</span>
               </li>
               <li className="flex justify-start">
-                <span className="w-36 text-gray-400">Saturday:</span> 
-                <span className="text-white">By Appointment</span>
-              </li>
-              <li className="flex justify-start">
-                <span className="w-36 text-gray-400">Sunday:</span> 
+                <span className="w-36 text-gray-400">Saturday - Sunday:</span> 
                 <span className="text-white">Closed</span>
               </li>
             </ul>

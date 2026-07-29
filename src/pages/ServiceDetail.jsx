@@ -6,13 +6,15 @@ import dentalImg from '../assets/dental.jpg';
 import invImg from '../assets/inv.jpg';
 import xxxImg from '../assets/xxx.png';
 import familyImg from '../assets/family.png';
+import dentImg from '../assets/dent.png';
+import toothImg from '../assets/tooth.png';
 
 
 const serviceData = {
   'dental-implants': {
     title: 'Dental Implants',
     description: 'Dental implants have become the preferred method of tooth replacement for several important reasons. They offer a permanent, natural-looking solution that restores both function and aesthetics.',
-    image: dentalImg,
+    image: dentImg,
     benefits: ['Permanent tooth replacement', 'Prevents bone loss', 'Looks and feels natural', 'No slipping or clicking']
   },
   'invisalign': {
@@ -50,7 +52,7 @@ const serviceData = {
   'extraction': {
     title: 'Tooth Extraction',
     description: 'When a tooth cannot be saved, gentle extraction is sometimes necessary to protect your overall oral health. Our team ensures your complete comfort throughout the procedure.',
-    image: '/extraction-2.png',
+    image: toothImg,
     benefits: ['Painless procedure', 'Removes source of infection', 'Prevents crowding (wisdom teeth)', 'Prepares for orthodontics or implants']
   }
 };
@@ -517,7 +519,7 @@ const ExtractionContent = () => {
         >
           <div className="aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_-10px_rgba(0,0,0,0.15)] relative z-10 border border-gray-100 bg-white flex items-center justify-center p-4">
             <img 
-              src="/extraction-1.png" 
+              src={toothImg} 
               alt="Tooth Extraction Procedure" 
               className="w-full h-full object-contain"
             />
