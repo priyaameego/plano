@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, CheckCircle2, Check, ChevronDown, Star, Sparkles, Smile, CalendarDays, Shield, ShieldCheck, Droplets, Activity, Moon, Apple, Search, BookOpen } from 'lucide-react';
 import dentalImg from '../assets/dental.jpg';
-import invImg from '../assets/inv.jpg';
+import invImg from '../assets/inv.png';
 import xxxImg from '../assets/xxx.png';
 import familyImg from '../assets/family.png';
 import dentImg from '../assets/dent.png';

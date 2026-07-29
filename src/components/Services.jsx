@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import dentalImg from '../assets/dental.jpg';
-import invImg from '../assets/inv.jpg';
+import invImg from '../assets/inv.png';
 import dentImg from '../assets/dent.png';
 
 const services = [
