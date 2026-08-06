@@ -33,13 +33,13 @@ export default function PatientEducation() {
     {
       title: 'How to Brush Properly',
       desc: 'Master the technique of brushing to ensure you are thoroughly removing plaque every day.',
-      thumbnail: '/smiling_brush.png',
+      thumbnail: '/smiling_family.png',
       videoUrl: 'https://www.youtube.com/embed/wzVXI_2YykA'
     },
     {
       title: 'Cosmetic Dentistry Options',
       desc: 'Explore the different ways we can enhance your smile with veneers, whitening, and more.',
-      thumbnail: '/smiling_family.png',
+      thumbnail: '/smiling_brush.png',
       videoUrl: 'https://www.youtube.com/embed/fHXOPun1cOs'
     }
   ];

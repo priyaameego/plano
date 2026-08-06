@@ -27,7 +27,7 @@ const serviceData = {
   'navigated-surgery': {
     title: 'Navigated Surgery',
     heading: 'Experience Precision with X-Guide Guided Implant Surgery',
-    description: 'Experience the future of dentistry with navigated surgery. Dr. Lobo utilizes the advanced X-Guide system to allow for unprecedented precision in implant placement, ensuring faster recovery and optimal results.',
+    description: 'Experience the future of dentistry with navigated surgery. Dr. Juma and Dr. Lobo utilize the advanced X-Guide system to allow for unprecedented precision in implant placement, ensuring faster recovery and optimal results.',
     image: '/navigated-surgery.jpg',
     benefits: ['Extreme precision', 'Minimally invasive', 'Faster recovery time', 'Highly predictable outcomes']
   },
@@ -344,7 +344,7 @@ const DentalImplantsContent = () => {
         <div className="relative z-10 flex items-center mb-6">
           <div className="w-12 h-0.5 bg-[#dfb15b] mr-4"></div>
           <h2 className="text-4xl font-bold font-sans">
-            Why <span className="text-[#dfb15b]">Dental Implants ?</span>
+            Why <span className="text-[#dfb15b]">dental implants ?</span>
           </h2>
         </div>
         
@@ -387,7 +387,7 @@ const DentalImplantsContent = () => {
           <div className="absolute -bottom-2 left-0 w-12 h-[3px] bg-[#dfb15b]"></div>
         </h3>
         <p className="text-[15px] leading-relaxed mt-8 mb-4">
-          Versatility of Dental implants allows their use in replacing a single tooth, multiple teeth or all of the teeth. The Dallas Fort Worth metroplex patients may require additional procedures to obtain the optimal esthetic and functional outcome which we also provide at Dental Place of Plano.
+          Versatility of dental implants allows their use in replacing a single tooth, multiple teeth or all of the teeth. The Dallas Fort Worth metroplex patients may require additional procedures to obtain the optimal esthetic and functional outcome which we also provide at Dental Place of Plano.
         </p>
         <p className="text-[15px] leading-relaxed">
           A surgical and prosthetic evaluation and consultation with Dr Daniel Juma or Dr Stephanie Lobo will determine whether you are a candidate for dental implant treatment and whether additional procedures, such as bone grafting will be necessary.
@@ -399,7 +399,7 @@ const DentalImplantsContent = () => {
         <div className="flex items-center mb-6">
           <div className="w-16 h-0.5 bg-[#dfb15b] mr-4"></div>
           <h2 className="text-4xl font-bold font-sans">
-            Benefits <span className="text-[#dfb15b]">of Dental Implants?</span>
+            Benefits <span className="text-[#dfb15b]">of dental implants?</span>
           </h2>
         </div>
         <p className="text-[15px] mb-12">
@@ -471,7 +471,7 @@ const DentalImplantsContent = () => {
 
       {/* Evaluation Section */}
       <div>
-        <h2 className="text-3xl font-bold font-sans mb-6">Evaluation for Dental Implants</h2>
+        <h2 className="text-3xl font-bold font-sans mb-6">Evaluation for dental implants</h2>
         <p className="text-[15px] leading-relaxed mb-4">
           Dental Place of Plano offers a surgical and restorative consultation to evaluate each patients unique presentation and determine if they are candidates for dental implant treatment as well as to develop an ideal treatment plan based on their individual needs.
         </p>
@@ -830,7 +830,7 @@ const NavigatedSurgeryContent = () => {
             Experience Precision with <span className="text-[#dfb15b]">X-Guide Guided Implant Surgery</span>
           </h2>
           <p className="text-lg text-gray-600 leading-relaxed">
-            Experience the future of dentistry with navigated surgery. <strong>Dr. Stephanie Lobo</strong> utilizes the advanced X-Guide system to allow for unprecedented precision in implant placement, ensuring faster recovery and optimal results.
+            Experience the future of dentistry with navigated surgery. <strong>Dr. Juma and Dr. Stephanie Lobo</strong> utilize the advanced X-Guide system to allow for unprecedented precision in implant placement, ensuring faster recovery and optimal results.
           </p>
         </motion.div>
       </div>
@@ -865,7 +865,7 @@ const NavigatedSurgeryContent = () => {
             The X-Guide Difference
           </h3>
           <p className="text-gray-600 leading-relaxed mb-6">
-            Navigated surgery is like GPS for your dental implants. By using 3D imaging and real-time tracking, Dr. Stephanie Lobo can precisely guide the implant into the exact desired position.
+            Navigated surgery is like GPS for your dental implants. By using 3D imaging and real-time tracking, Dr. Juma and Dr. Stephanie Lobo can precisely guide the implant into the exact desired position.
           </p>
           <p className="text-gray-600 leading-relaxed mb-8">
             This minimally invasive approach means smaller incisions, less discomfort, and a much faster healing process compared to traditional freehand implant surgery.
@@ -901,7 +901,7 @@ const NavigatedSurgeryContent = () => {
           Ready for advanced implant care?
         </h3>
         <p className="text-gray-600 mb-8 max-w-xl mx-auto">
-          Consult with Dr. Stephanie Lobo to see if you are a candidate for Navigated Surgery.
+          Consult with Dr. Juma or Dr. Stephanie Lobo to see if you are a candidate for Navigated Surgery.
         </p>
         <Link 
           to="/book-now" 

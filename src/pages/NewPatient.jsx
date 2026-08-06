@@ -29,10 +29,10 @@ export default function NewPatient() {
           <div className="space-y-6">
             <h2 className="text-3xl font-bold font-sans">During your appointment</h2>
             <p className="text-[15px] leading-8">
-              Either Dr. Daniel Juma will examine you and discuss your concerns and expectations regarding your dental health and designs for a brighter, whiter and beautiful smile.
+              Either Dr. Daniel Juma or Dr. Stephanie Lobo will examine you and discuss your concerns and expectations regarding your dental health and designs for a brighter, whiter and beautiful smile.
             </p>
             <p className="text-[15px] leading-8">
-              Dr. Juma would both like to encourage a lifetime of healthy smiles and will therefore focus on patient education. Having an appointment that is exclusively yours also allows ample time with us to ensure that all your concerns are addressed.
+              Dr. Juma and Dr. Stephanie Lobo would both like to encourage a lifetime of healthy smiles and will therefore focus on patient education. Having an appointment that is exclusively yours also allows ample time with us to ensure that all your concerns are addressed.
             </p>
             <p className="text-[15px] leading-8">
               We recommend our patients plan on 60 to 90 minutes for a new patient visit. At Dental Place of Plano, we take pride in personalizing our patient experience. We realize the uniqueness of each patient's general and dental health and consequently, we take seriously your responses to the patient information questionnaires.
